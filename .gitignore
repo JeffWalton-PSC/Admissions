@@ -1,5 +1,7 @@
-# ignore output files
+# ignore input/output files
 *.txt
+*.csv
+*.html
 
 # ignore .ipynb_checkpoints directory
 .ipynb_checkpoints/

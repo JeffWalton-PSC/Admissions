@@ -4,7 +4,7 @@ from datetime import datetime, date
 
 
 # read VWSTAGERANKING.csv and drop unused fields
-stgrnk = pd.read_csv('../PowerCampus/VWSTAGERANKING.csv')
+stgrnk = pd.read_csv('VWSTAGERANKING.csv')
 stgrnk.drop(['code_table', 'MEDIUM_DESC',
              'Converted/Confirmed/Accepted/Require SepDate'],
             inplace=True, axis=1)
@@ -14,7 +14,7 @@ stg_hist_dtype = {'PEOPLE_CODE_ID': str, 'ACADEMIC_YEAR': str,
                   'ACADEMIC_TERM': str, 'ACADEMIC_SESSION': str,
                   'FIELD_ID': np.int64}
 date_cols = ['FIELD_DATE', 'REVISION_DATE', 'REVISION_TIME']
-stg_hist = pd.read_csv('../PowerCampus/STAGEHISTORY.csv', dtype=stg_hist_dtype,
+stg_hist = pd.read_csv('STAGEHISTORY.csv', dtype=stg_hist_dtype,
                        parse_dates=date_cols,
                        usecols=['PEOPLE_CODE_ID', 'ACADEMIC_YEAR',
                                 'ACADEMIC_TERM', 'ACADEMIC_SESSION',
