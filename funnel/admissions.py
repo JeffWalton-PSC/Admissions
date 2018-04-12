@@ -59,7 +59,7 @@ stage_data = pd.merge(stg_hist, stgrnk, left_on=['FIELD_ID'],
 
 ad_keep_values = ['300', 'ACC', 'ACXL', 'CANC', 'DEF', 'DEFR', 'DENY', 'DPAC',
                   'TRDP', 'TRPD', 'TRNS', 'WAIT']
-ad_keep_cols = ['PEOPLE_CODE_ID', 'Year_Term', 'Admissions_Week',
+ad_keep_cols = ['PEOPLE_CODE_ID', 'year_term', 'Admissions_Week',
                 'field_value', 'status']
 sd1 = stage_data.loc[(stage_data['field_value'].isin(ad_keep_values))]
 sd1 = sd1[ad_keep_cols]
