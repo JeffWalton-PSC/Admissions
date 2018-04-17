@@ -63,8 +63,11 @@ accepted = accepted.loc[~accepted['create_date'].isnull(), keep_fields]
 # stack Stage History, Academic Applied and Academic Accepted
 adm_df = stage_data.append(applied).append(accepted)
 
-adm_df = (adm_df.loc[(adm_df['ACADEMIC_TERM'].isin(['FALL', 'SPRING'])) &
-                     (adm_df['ACADEMIC_SESSION'] == 'MAIN')]
+adm_df = (adm_df.loc[((adm_df['ACADEMIC_TERM'].isin(['FALL', 'SPRING'])) &
+                      (adm_df['ACADEMIC_SESSION'] == 'MAIN') &
+                      (adm_df['ACADEMIC_YEAR'] >= '2009')
+                      )
+                     ]
           )
 
 # create new fields
@@ -118,3 +121,38 @@ adm_df1 = (adm_df1.sort_values(['year_term', 'PEOPLE_CODE_ID',
                              'admission_status'],
                             keep='first')
            )
+
+e = adm_df1.pivot_table(index=['year_term', 'PEOPLE_CODE_ID'],
+                        columns=['admission_status'],
+                        values=['Admissions_Week']
+                        )
+
+
+# function returns status for week
+def f_status(field, data_frame, n):
+    f_week = (lambda df: 1
+              if ((df[('Admissions_Week', field)] <= n) &
+                  (df[('Admissions_Week', 'Canceled')] > n))
+              else 0
+              )
+    return data_frame.apply(f_week, axis=1)
+
+
+# function returns DataFrame of 53 week status values
+def fill_weeks(field, data_frame):
+    weeks = range(1, 54)
+    fld = field[:2]
+    r = pd.DataFrame(np.zeros((data_frame.shape[0], 53)),
+                     index=data_frame.index,
+                     columns=[f'{fld}{w:02d}' for w in weeks])
+    for w in weeks:
+        f = f'{fld}{w:02d}'
+        r.loc[:, f] = f_status(field, data_frame, w)
+
+    return r
+
+
+stage_list = ['Applied', 'Accepted', 'Deposited']
+p = pd.DataFrame()
+for s in stage_list:
+    p = pd.concat([p, fill_weeks(s, e)], axis=1)
