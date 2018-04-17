@@ -2,6 +2,8 @@
 *.txt
 *.csv
 *.html
+*.xls
+*.xlsx
 
 # ignore .ipynb_checkpoints directory
 .ipynb_checkpoints/
