@@ -7,9 +7,12 @@ from sqlalchemy import create_engine
 # local connection information
 db_user = os.environ.get('DB_USER')
 db_pass = os.environ.get('DB_PASS')
+db_host = os.environ.get('DB_HOST')
+db_database = os.environ.get('DB_DATABASE')
+db_driver = os.environ.get('DB_DRIVER')
 engine = create_engine(f'mssql+pyodbc://{db_user}:{db_pass}' +
-                       '@PSC-SQLProd/Campus6?' +
-                       'driver=ODBC+Driver+13+for+SQL+Server')
+                       f'@{db_host}/{db_database}?' +
+                       f'driver={db_driver}')
 connection = engine.connect()
 
 today = datetime.now().strftime('%Y%m%d')
