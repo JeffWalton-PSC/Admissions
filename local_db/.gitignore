@@ -7,3 +7,5 @@
 
 # ignore .ipynb_checkpoints directory
 .ipynb_checkpoints/
+
+*.pyc
