@@ -2,18 +2,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, date
 
-import os
-from sqlalchemy import create_engine
-# local connection information
-db_user = os.environ.get('DB_USER')
-db_pass = os.environ.get('DB_PASS')
-db_host = os.environ.get('DB_HOST')
-db_database = os.environ.get('DB_DATABASE')
-db_driver = os.environ.get('DB_DRIVER')
-engine = create_engine(f'mssql+pyodbc://{db_user}:{db_pass}' +
-                       f'@{db_host}/{db_database}?' +
-                       f'driver={db_driver}')
-connection = engine.connect()
+import local_db
+connection = local_db.connection()
 
 today = datetime.now().strftime('%Y%m%d')
 
@@ -32,7 +22,7 @@ sql_str = "SELECT PEOPLE_CODE_ID, ACADEMIC_YEAR, ACADEMIC_TERM, " + \
           f"ACADEMIC_YEAR >= '{begin_year}' "
 stg_hist = pd.read_sql_query(sql_str, connection)
 
-stg_hist['create_date'] = stg_hist['FIELD_DATE']
+stg_hist = stg_hist.rename(columns={'FIELD_DATE': 'create_date'})
 stage_data = pd.merge(stg_hist, stgrnk, left_on=['FIELD_ID'],
                       right_on=['STAGERANKING_ID'], how='left')
 keep_fields = ['PEOPLE_CODE_ID', 'ACADEMIC_YEAR', 'ACADEMIC_TERM',
@@ -40,19 +30,14 @@ keep_fields = ['PEOPLE_CODE_ID', 'ACADEMIC_YEAR', 'ACADEMIC_TERM',
 stage_data = stage_data.loc[~stage_data['create_date'].isnull(), keep_fields]
 
 # read ACADEMIC data
-academic_dtype = {'PEOPLE_CODE_ID': str, 'ACADEMIC_YEAR': str,
-                  'ACADEMIC_TERM': str, 'ACADEMIC_SESSION': str,
-                  'APPLICATION_FLAG': str, 'APP_STATUS': str}
-date_cols = ['APPLICATION_DATE', 'APP_STATUS_DATE', 'APP_DECISION_DATE']
-academic = pd.read_csv('ACADEMIC.csv', dtype=academic_dtype,
-                       parse_dates=date_cols,
-                       usecols=['PEOPLE_CODE_ID',
-                                'ACADEMIC_YEAR', 'ACADEMIC_TERM',
-                                'ACADEMIC_SESSION', 'POPULATION',
-                                'INQUIRY_FLAG',
-                                'APPLICATION_FLAG', 'APPLICATION_DATE',
-                                'APP_STATUS', 'APP_STATUS_DATE',
-                                'APP_DECISION', 'APP_DECISION_DATE'])
+sql_str = "SELECT PEOPLE_CODE_ID, ACADEMIC_YEAR, ACADEMIC_TERM, " + \
+          "ACADEMIC_SESSION, POPULATION, INQUIRY_FLAG, " + \
+          "APPLICATION_FLAG, APPLICATION_DATE, " + \
+          "APP_STATUS, APP_STATUS_DATE, " +\
+          "APP_DECISION, APP_DECISION_DATE " + \
+          "FROM ACADEMIC WHERE " + \
+          f"ACADEMIC_YEAR >= '{begin_year}' "
+academic = pd.read_sql_query(sql_str, connection)
 
 app_data = (academic.loc[~(academic['POPULATION'].isin(['ADVSTU', 'NOND'])) &
                          ((academic['INQUIRY_FLAG'] == 'Y') |
