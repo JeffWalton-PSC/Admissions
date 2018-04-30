@@ -45,15 +45,15 @@ app_data = (academic.loc[~(academic['POPULATION'].isin(['ADVSTU', 'NOND'])) &
             )
 
 applied = (app_data[app_data['APP_STATUS'].notnull()]
-           .rename(columns={'APP_STATUS': 'field_value'})
-           .rename(columns={'APP_STATUS_DATE': 'create_date'})
+           .rename(columns={'APP_STATUS': 'field_value',
+                            'APP_STATUS_DATE': 'create_date'})
            )
 applied.loc[:, 'field_name'] = 'Application Status'
 applied = applied.loc[~applied['create_date'].isnull(), keep_fields]
 
 accepted = (app_data[app_data['APP_DECISION'].notnull()]
-            .rename(columns={'APP_DECISION': 'field_value'})
-            .rename(columns={'APP_DECISION_DATE': 'create_date'})
+            .rename(columns={'APP_DECISION': 'field_value',
+                             'APP_DECISION_DATE': 'create_date'})
             )
 accepted.loc[:, 'field_name'] = 'Application Decision'
 accepted = accepted.loc[~accepted['create_date'].isnull(), keep_fields]
@@ -142,18 +142,29 @@ def f_status(field, data_frame, n):
 # function returns DataFrame of 53 week status values
 def fill_weeks(field, data_frame):
     weeks = range(1, 54)
-    fld = field[:2]
     r = pd.DataFrame(np.zeros((data_frame.shape[0], 53)),
                      index=data_frame.index,
-                     columns=[f'{fld}{w:02d}' for w in weeks])
+                     columns=[f'{w:02d}' for w in weeks])
     for w in weeks:
-        f = f'{fld}{w:02d}'
+        f = f'{w:02d}'
         r.loc[:, f] = f_status(field, data_frame, w)
+        r.loc[:, 'stage'] = field
 
+    r = r.reset_index().set_index(['year_term', 'stage', 'PEOPLE_CODE_ID'])
+   
     return r
 
 
 stage_list = ['Applied', 'Accepted', 'Deposited']
-p = pd.DataFrame()
-for s in stage_list:
-    p = pd.concat([p, fill_weeks(s, e)], axis=1)
+w = pd.DataFrame()
+for stg in stage_list:
+    w = pd.concat([w, fill_weeks(stg, e)])
+
+
+summ = w.groupby(['year_term', 'stage']).sum()
+summ_t = summ.transpose()
+
+terms = ['2010.Fall', '2011.Fall', '2012.Fall', '2013.Fall', '2014.Fall', '2015.Fall', '2016.Fall', '2017.Fall', '2018.Fall', ]
+this_term = '2018.Fall'
+terms.remove(this_term)
+
