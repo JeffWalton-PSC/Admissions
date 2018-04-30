@@ -71,7 +71,13 @@ adm_df = (adm_df.loc[((adm_df['ACADEMIC_TERM'].isin(['FALL', 'SPRING'])) &
 # create new fields
 adm_df['year_term'] = (adm_df['ACADEMIC_YEAR'] + '.' +
                        adm_df['ACADEMIC_TERM'].str.title())
-adm_df['Week_Number'] = adm_df['create_date'].dt.week
+week_number = (lambda r: (r['create_date'].date().isocalendar()[1])
+               if (r['create_date'].date() >= 
+                   date((int(r['ACADEMIC_YEAR'])-1), 9, 1))
+               else (date((int(r['ACADEMIC_YEAR'])-1), 9, 1)
+                     .isocalendar()[1])
+               )
+adm_df['Week_Number'] = adm_df.apply(week_number, axis=1)
 
 # convert ACADEMIC_YEAR to numeric keep numeric-valued records
 adm_df['ACADEMIC_YEAR'] = pd.to_numeric(adm_df['ACADEMIC_YEAR'],
@@ -79,14 +85,14 @@ adm_df['ACADEMIC_YEAR'] = pd.to_numeric(adm_df['ACADEMIC_YEAR'],
 adm_df = adm_df.loc[adm_df['ACADEMIC_YEAR'].notnull()]
 
 adm_week_number = (lambda r: (r['Week_Number'] -
-                              (date(int(r['ACADEMIC_YEAR']), 9, 1)
-                               .isocalendar()[1])
+                              (date((int(r['ACADEMIC_YEAR'])-1), 9, 1)
+                              .isocalendar()[1])
                               )
-                   if (r['Week_Number'] > (date(int(r['ACADEMIC_YEAR']), 9, 1)
+                   if (r['Week_Number'] >= (date((int(r['ACADEMIC_YEAR'])-1), 9, 1)
                                            .isocalendar()[1]))
                    else (53 + r['Week_Number'] -
-                         (date(int(r['ACADEMIC_YEAR']), 9, 1)
-                          .isocalendar()[1])
+                         (date((int(r['ACADEMIC_YEAR'])-1), 9, 1)
+                         .isocalendar()[1])
                          )
                    )
 adm_df['Admissions_Week'] = adm_df.apply(adm_week_number, axis=1)
@@ -160,8 +166,24 @@ w = pd.DataFrame()
 for stg in stage_list:
     w = pd.concat([w, fill_weeks(stg, e)])
 
+# add CURRICULUM field
+sql_str = "SELECT PEOPLE_CODE_ID, ACADEMIC_YEAR, ACADEMIC_TERM, " + \
+          "ACADEMIC_SESSION, CURRICULUM, PRIMARY_FLAG " + \
+          "FROM ACADEMIC WHERE " + \
+          "PRIMARY_FLAG = 'Y' AND " + \
+          f"ACADEMIC_YEAR >= '{begin_year}' "
+curriculum_df = pd.read_sql_query(sql_str, connection)
+curriculum_df['year_term'] = (curriculum_df['ACADEMIC_YEAR'] + '.' +
+                              curriculum_df['ACADEMIC_TERM'].str.title())
+curriculum_df = curriculum_df.rename(columns={'CURRICULUM': 'curriculum'})
+curr_flds = ['PEOPLE_CODE_ID', 'year_term', 'curriculum']
+curriculum_df = curriculum_df[curr_flds]
+curriculum_df = curriculum_df.drop_duplicates(curr_flds)
 
-summ = w.groupby(['year_term', 'stage']).sum()
+y = pd.merge(w.reset_index(), curriculum_df,
+             on=['year_term', 'PEOPLE_CODE_ID'], how='left')
+
+summ = y.groupby(['year_term', 'stage']).sum()
 summ_t = summ.transpose()
 
 terms = ['2010.Fall', '2011.Fall', '2012.Fall', '2013.Fall', '2014.Fall', '2015.Fall', '2016.Fall', '2017.Fall', '2018.Fall', ]
