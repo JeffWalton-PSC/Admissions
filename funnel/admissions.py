@@ -147,8 +147,8 @@ def f_status(field, data_frame, n):
 
 # function returns DataFrame of 53 week status values
 def fill_weeks(field, data_frame):
-    weeks = range(1, 54)
-    r = pd.DataFrame(np.zeros((data_frame.shape[0], 53)),
+    weeks = range(0, 54)
+    r = pd.DataFrame(np.zeros((data_frame.shape[0], 54)),
                      index=data_frame.index,
                      columns=[f'{w:02d}' for w in weeks])
     for w in weeks:
@@ -159,7 +159,7 @@ def fill_weeks(field, data_frame):
     r = r.reset_index().set_index(['year_term', 'stage', 'PEOPLE_CODE_ID'])
    
     return r
-
+    
 
 stage_list = ['Applied', 'Accepted', 'Deposited']
 w = pd.DataFrame()
