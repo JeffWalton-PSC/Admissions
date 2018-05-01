@@ -183,10 +183,4 @@ curriculum_df = curriculum_df.drop_duplicates(curr_flds)
 y = pd.merge(w.reset_index(), curriculum_df,
              on=['year_term', 'PEOPLE_CODE_ID'], how='left')
 
-summ = y.groupby(['year_term', 'stage']).sum()
-summ_t = summ.transpose()
-
-terms = ['2010.Fall', '2011.Fall', '2012.Fall', '2013.Fall', '2014.Fall', '2015.Fall', '2016.Fall', '2017.Fall', '2018.Fall', ]
-this_term = '2018.Fall'
-terms.remove(this_term)
-
+y.to_hdf('data/stage_data', key='weekly', mode='w', data_columns=True, complevel=0)

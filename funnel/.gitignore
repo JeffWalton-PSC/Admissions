@@ -5,5 +5,8 @@
 *.xls
 *.xlsx
 
-# ignore .ipynb_checkpoints directory
+# ignore .ipynb_checkpoints/ directory
 .ipynb_checkpoints/
+
+# ignore data/ directory
+data/
