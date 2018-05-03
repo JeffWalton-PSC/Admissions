@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import date
 
 from bokeh.layouts import widgetbox, row
-from bokeh.models.widgets import RadioGroup
+from bokeh.models.widgets import MultiSelect, RadioGroup, Select
 from bokeh.plotting import figure, curdoc
 from bokeh.palettes import Blues8
 
@@ -32,20 +32,24 @@ def adm_week(d):
 
 df = pd.read_hdf('funnel/data/stage_data', key='weekly')
 
-terms = ['2012.Fall', '2013.Fall', '2014.Fall', '2015.Fall', '2016.Fall', '2017.Fall', '2018.Fall', ]
-this_term = '2018.Fall'
-terms.remove(this_term)
+all_terms = sorted(list(df['year_term'].dropna().unique()))
+this_term = Select(title="Current Term:", value=all_terms[-1], options=all_terms)
+if this_term in all_terms:
+    all_terms.remove(this_term)
+terms = MultiSelect(title="Display Other Terms:", value=None,
+                           options=[(i,i) for i in all_terms ])
 
 summ = df.groupby(['year_term', 'stage']).sum()
 summ_t = summ.transpose()
 
 week_number, adm_week_number = adm_week(today)
 # curr_list = sorted(list(df['curriculum'].dropna().unique()))
-title = f"Admissions Weekly Summary - Week {adm_week_number:d} ({today_str})"
 
 
 def create_figure():
-    stage = stage_list[stage_n.active]
+    stage = stage_list[stage_rg.active]
+    title = f"{stage} - Admissions Weekly Summary - Week {adm_week_number:d} ({today_str})"
+
     p = figure(plot_width=800, plot_height=600, title=title,
            x_axis_label="Week Number", y_axis_label=stage,
            tools="pan,wheel_zoom,box_zoom,save,reset",
@@ -71,10 +75,10 @@ def update(attr, old, new):
 
 
 stage_list = ['Applied', 'Accepted', 'Deposited']
-stage_n = RadioGroup(labels=stage_list, active=2)
-stage_n.on_change('active', update)
+stage_rg = RadioGroup(labels=stage_list, active=2)
+stage_rg.on_change('active', update)
 
-controls = widgetbox([stage_n])
+controls = widgetbox([stage_rg])
 layout = row(controls, create_figure())
 
 curdoc().add_root(layout)
