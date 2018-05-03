@@ -133,6 +133,7 @@ e = adm_df1.pivot_table(index=['year_term', 'PEOPLE_CODE_ID'],
                         columns=['admission_status'],
                         values=['Admissions_Week']
                         )
+e = e.fillna(54)
 
 
 # function returns status for week
