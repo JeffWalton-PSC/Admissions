@@ -6,8 +6,6 @@ from bokeh.models.widgets import MultiSelect, RadioGroup, Select
 from bokeh.plotting import figure, curdoc
 from bokeh.palettes import Blues9
 
-today = date.today()
-today_str = today.strftime('%Y%m%d')
 
 def adm_week(d):
     """
@@ -30,17 +28,6 @@ def adm_week(d):
     return (week_number, adm_week_number)
 
 
-df = pd.read_hdf('data/stage_data', key='weekly')
-df = df[(df['year_term']>'2011.Spring')]
-
-
-summ = df.groupby(['year_term', 'stage']).sum()
-summ_t = summ.transpose()
-
-week_number, adm_week_number = adm_week(today)
-# curr_list = sorted(list(df['curriculum'].dropna().unique()))
-
-
 def create_figure(df):
     
     stage = stage_list[stage_rg.active]
@@ -57,12 +44,10 @@ def create_figure(df):
         ym = df[(t, stage)].max()
         if ym > y_max:
             y_max = ym
-    print('y_max', y_max)
 
     TOOLS="pan,wheel_zoom,box_zoom,save,reset"
     #TOOLS="crosshair,pan,wheel_zoom,box_zoom,save,reset"
 
-    print('create_figure', stage_rg.active, stage, term)
     p = figure(plot_width=800, plot_height=600, title=title,
            x_axis_label="Admissions Week Number (year starts Sept 1)",
            y_axis_label=stage,
@@ -90,21 +75,31 @@ def create_figure(df):
 
 
 def update(attr, old, new):
-    #global terms_opt
-    #terms_opt = update_terms(all_terms)
-    print('update', stage_rg.active, stage_list[stage_rg.active], select_term.value, terms_opt, terms.value)
     layout.children[1] = create_figure(summ_t)
 
 
-def update_terms(all_terms):
-    other_terms = all_terms.copy()
-    if select_term.value in other_terms:
-        other_terms.remove(select_term.value)
-    terms_opt = [(i,i) for i in other_terms ]
-    print('update_terms', terms_opt)
-    return terms_opt
+def update_term(attr, old, new):
+    terms_opt = all_terms.copy()
+    terms_opt.remove(select_term.value)
+    terms.options = terms_opt
+    terms.value=terms_opt
+    layout.children[1] = create_figure(summ_t)
 
 
+today = date.today()
+today_str = today.strftime('%Y%m%d')
+
+df = pd.read_hdf('data/stage_data', key='weekly')
+df = df[(df['year_term']>'2011.Spring')]
+
+# curr_list = sorted(list(df['curriculum'].dropna().unique()))
+
+summ = df.groupby(['year_term', 'stage']).sum()
+summ_t = summ.transpose()
+
+week_number, adm_week_number = adm_week(today)
+
+# widgets
 stage_list = ['Applied', 'Accepted', 'Deposited']
 stage_rg = RadioGroup(name='Stage:', labels=stage_list, active=2)
 stage_rg.on_change('active', update)
@@ -112,7 +107,7 @@ stage_rg.on_change('active', update)
 all_terms = sorted(list(df['year_term'].dropna().unique()))
 all_terms = [l for l in all_terms if 'Fall' in l]
 select_term = Select(title="Selected Term:", value=all_terms[-1], options=all_terms)
-select_term.on_change('value', update)
+select_term.on_change('value', update_term)
 
 terms_opt = all_terms.copy()
 terms_opt.remove(select_term.value)
@@ -123,6 +118,7 @@ terms = MultiSelect(title="Other Display Terms:",
 terms.on_change('value', update)
 
 
+# layout
 controls = widgetbox([stage_rg, select_term, terms])
 layout = row(controls, create_figure(summ_t))
 
