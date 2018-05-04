@@ -39,12 +39,18 @@ week_number, adm_week_number = adm_week(today)
 # curr_list = sorted(list(df['curriculum'].dropna().unique()))
 
 
-def create_figure(df, title, stage, term):
+def create_figure(df):
     
-    
+    stage = stage_list[stage_rg.active]
 
+    title = f"{stage} - Admissions Weekly Summary - Week {adm_week_number:d} ({today_str})"
+
+    term = current_term.value
+
+    print('create_figure', stage_rg.active, stage, term)
     p = figure(plot_width=800, plot_height=600, title=title,
-           x_axis_label="Week Number", y_axis_label=stage,
+           x_axis_label="Admissions Week Number (year starts Sept 1)",
+           y_axis_label=stage,
            tools="pan,wheel_zoom,box_zoom,save,reset",
           )
     #c=5
@@ -64,18 +70,18 @@ def create_figure(df, title, stage, term):
 
 
 def update(attr, old, new):
-    layout.children[1] = create_figure(summ_t, title, stage, current_term.value)
+    print('update', stage_rg.active, stage_list[stage_rg.active], current_term.value)
+    layout.children[1] = create_figure(summ_t)
 
 
 stage_list = ['Applied', 'Accepted', 'Deposited']
 stage_rg = RadioGroup(name='Stage:', labels=stage_list, active=2)
 stage_rg.on_change('active', update)
-stage = stage_list[stage_rg.active]
-
-title = f"{stage} - Admissions Weekly Summary - Week {adm_week_number:d} ({today_str})"
 
 all_terms = sorted(list(df['year_term'].dropna().unique()))
-current_term = Select(title="Current Term:", value=all_terms[-2], options=all_terms)
+all_terms = [l for l in all_terms if 'Fall' in l]
+current_term = Select(title="Current Term:", value=all_terms[-1], options=all_terms)
+current_term.on_change('value', update)
 
 other_terms = all_terms.copy()
 if current_term.value in other_terms:
@@ -84,11 +90,12 @@ terms_opt = [(i,i) for i in other_terms ]
 print('terms_opt', terms_opt)
 # terms = MultiSelect(title="Display Other Terms:", value=None,
 #                     options=terms_opt)
+#terms.on_change('value', update)
 
 
 controls = widgetbox([stage_rg, current_term])
 ##print('controls', controls)
-layout = row(controls, create_figure(summ_t, title, stage, current_term.value))
+layout = row(controls, create_figure(summ_t))
 ##print ('layout', layout)
 
 curdoc().add_root(layout)
