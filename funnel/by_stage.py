@@ -67,7 +67,8 @@ def create_figure(df):
 
     # week_number line
     p.line((adm_week_number,adm_week_number),
-           (-1000,5000), color='green', line_width=0.8, legend=None, alpha=0.6)
+           (-1000,5000), color='green', line_width=0.8, line_dash='dashed',
+           legend=f'Week {adm_week_number:d}', alpha=0.8)
 
     p.legend.location = "top_left"
     
@@ -111,7 +112,7 @@ select_term.on_change('value', update_term)
 
 terms_opt = all_terms.copy()
 terms_opt.remove(select_term.value)
-terms = MultiSelect(title="Other Display Terms:",
+terms = MultiSelect(title="Other Displayed Terms: (ctrl-click to select/de-select)",
                       options=terms_opt,
                       size=5,
                       value=terms_opt)

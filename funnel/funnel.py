@@ -2,8 +2,11 @@ import pandas as pd
 from datetime import date
 
 from bokeh.layouts import widgetbox, row
-from bokeh.models.widgets import Select
-from bokeh.plotting import figure, curdoc
+from bokeh.models import HoverTool
+from bokeh.models.widgets import Select 
+from bokeh.plotting import figure, curdoc, ColumnDataSource
+
+TOOLS = "pan,wheel_zoom,box_zoom,save,reset"
 
 today = date.today()
 today_str = today.strftime('%Y%m%d')
@@ -21,14 +24,28 @@ def create_figure(df):
 
     title = f"{term} - Admissions Annual Funnel  ({today_str})"
 
+    hover = HoverTool(tooltips=[("week", "@week"),
+#                                ("number", "$y{0}"),
+                               ("applied", "@app"),
+                               ("accepted", "@acc"),
+                               ("deposited", "@dep"),
+                                ])
+
     p = figure(plot_width=800, plot_height=600, title=title,
            x_axis_label="Admissions Week Number (year starts Sept 1)", y_axis_label=None,
-           tools="pan,wheel_zoom,box_zoom,save,reset",
+           tools=[TOOLS, hover],
           )
 
-    p.line(df.index, df[(term, 'Applied')], color='green', legend='Applied')
-    p.line(df.index, df[(term, 'Accepted')], color='blue', legend='Accepted')
-    p.line(df.index, df[(term, 'Deposited')], color='red', legend='Deposited')
+    source = ColumnDataSource(data = dict(
+        week=df.index,
+        app=df[(term, 'Applied')].values,
+        acc=df[(term, 'Accepted')].values,
+        dep=df[(term, 'Deposited')].values,
+        ))
+
+    p.line('week', 'app', source=source, color='green', legend='Applied')
+    p.line('week', 'acc', source=source, color='blue', legend='Accepted')
+    p.line('week', 'dep', source=source, color='red', legend='Deposited')
 
     p.legend.location = "top_left"
     
