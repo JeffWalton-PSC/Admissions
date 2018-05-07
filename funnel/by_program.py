@@ -29,7 +29,6 @@ def adm_week(d):
 
 
 def create_figure(df):
-    print('begin create_figure')
     stage = stage_list[stage_rg.active]
 
     prog = program.value
@@ -37,12 +36,10 @@ def create_figure(df):
     title = f"{prog} - Admissions Weekly Summary - Week {adm_week_number:d} ({today_str})"
 
     term = select_term.value
-    print(term)
 
     term_list = list(terms.value)
     term_list.reverse()
     
-    print('term_list', term_list)
     y_max = df[(term, stage, prog)].max()
     for t in term_list:
         ym = df[(t, stage, prog)].max()
@@ -78,7 +75,6 @@ def create_figure(df):
 
     p.yaxis.minor_tick_line_color = None
     
-    print('end create_figure')
     return p
 
 
@@ -96,12 +92,10 @@ def update_prog(attr, old, new):
         terms_opt.remove(select_term.value)
     terms.options = terms_opt
     terms.value=[terms_opt[-1]]
-    print(terms_opt)
     layout.children[1] = create_figure(summ_t)
 
 
 def update_term(attr, old, new):
-    print('begin update_term')
     terms_opt = sorted(list(pt.loc[((pt['curriculum'] == program.value) &
                                 (pt['stage'] == stage_list[stage_rg.active])),
                                 'year_term'].dropna().unique()
@@ -109,7 +103,6 @@ def update_term(attr, old, new):
     terms_opt= [l for l in terms_opt if 'Fall' in l]
     terms_opt.remove(select_term.value)
     terms.options = terms_opt
-    print(terms_opt)
     terms.value=terms_opt
     layout.children[1] = create_figure(summ_t)
     program_list = sorted(list(pt.loc[((pt['year_term'] == select_term.value) &
@@ -119,7 +112,6 @@ def update_term(attr, old, new):
     prog = program_list.index(program.value)
     program.options = program_list
     program.value = program_list[prog]
-    print('end update_term')
     
 
 today = date.today()
@@ -149,15 +141,12 @@ all_terms = [l for l in all_terms if 'Fall' in l]
 select_term = Select(title="Selected Term:", value=all_terms[-1], options=all_terms)
 select_term.on_change('value', update_term)
 
-print('before program_list', select_term.value, stage_rg.active, stage_list[stage_rg.active])
 program_list = sorted(list(pt.loc[((pt['year_term'] == select_term.value) &
                                    (pt['stage'] == stage_list[stage_rg.active])),
                                   'curriculum'].dropna().unique()
                            ))
-print('program_list', type(program_list), len(program_list), program_list)
 program = Select(title="Selected Academic Program:", value=program_list[0], options=program_list)
 program.on_change('value', update_prog)
-print('after program_list')
 
 terms_opt = all_terms.copy()
 terms_opt.remove(select_term.value)
@@ -167,13 +156,11 @@ terms = MultiSelect(title="Other Displayed Terms: (ctrl-click to select/de-selec
                       value=[terms_opt[-1]]
                     )
 terms.on_change('value', update)
-print('after terms')
 
 
 # layout
 controls = widgetbox([stage_rg, select_term, program, terms])
 layout = row(controls, create_figure(summ_t))
-print('after layout')
 
 curdoc().add_root(layout)
 curdoc().title = "Admissions Weekly Report"
