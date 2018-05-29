@@ -17,9 +17,10 @@ stgrnk = pd.read_sql_query(sql_str, connection)
 
 # read STAGEHISTORY data
 sql_str = "SELECT PEOPLE_CODE_ID, ACADEMIC_YEAR, ACADEMIC_TERM, " + \
-          "ACADEMIC_SESSION, FIELD_ID, FIELD_DATE " + \
+          "ACADEMIC_SESSION, FIELD_ID, FIELD_DATE, HIDDEN " + \
           "FROM STAGEHISTORY WHERE " + \
-          f"ACADEMIC_YEAR >= '{begin_year}' "
+          "HIDDEN = 'N' " + \
+          f"AND ACADEMIC_YEAR >= '{begin_year}' "
 stg_hist = pd.read_sql_query(sql_str, connection)
 
 stg_hist = stg_hist.rename(columns={'FIELD_DATE': 'create_date'})
