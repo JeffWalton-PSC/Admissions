@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, date
+from pathlib import Path
+
+data_path = Path(r'\\psc-data\E\Applications\Admissions\funnel')
+data_store = data_path / 'data/stage_data'
 
 import local_db
 connection = local_db.connection()
@@ -185,4 +189,4 @@ curriculum_df = curriculum_df.drop_duplicates(curr_flds)
 y = pd.merge(w.reset_index(), curriculum_df,
              on=['year_term', 'PEOPLE_CODE_ID'], how='left')
 
-y.to_hdf('data/stage_data', key='weekly', mode='w', data_columns=True, complevel=0)
+y.to_hdf(data_store, key='weekly', mode='w', data_columns=True, complevel=0)
