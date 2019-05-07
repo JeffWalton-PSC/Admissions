@@ -106,7 +106,9 @@ adm_df = adm_df.loc[adm_df["ACADEMIC_YEAR"].notnull()]
 
 adm_week_number = (
     lambda r: (
-        r["Week_Number"] - (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1])
+        r["Week_Number"] 
+        - (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1]) 
+        + 1
     )
     if (
         r["Week_Number"] >= (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1])
