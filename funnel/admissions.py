@@ -3,7 +3,8 @@ import numpy as np
 from datetime import datetime, date
 from pathlib import Path
 
-data_path = Path(r"\\psc-data\E\Applications\Admissions\funnel")
+#data_path = Path(r"\\psc-data\E\Applications\Admissions\funnel")
+data_path = Path(r"E:\Applications\Admissions\funnel")
 data_store = data_path / "data\stage_data"
 
 import local_db
