@@ -92,6 +92,12 @@ adm_df = adm_df.loc[
 adm_df["year_term"] = (
     adm_df["ACADEMIC_YEAR"] + "." + adm_df["ACADEMIC_TERM"].str.title()
 )
+week_number = (
+    lambda r: (r["create_date"].date().isocalendar()[1])
+    if (r["create_date"].date() >= date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1))
+    else (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1])
+)
+adm_df["Week_Number"] = adm_df.apply(week_number, axis=1)
 
 # convert ACADEMIC_YEAR to numeric keep numeric-valued records
 adm_df["ACADEMIC_YEAR"] = pd.to_numeric(
@@ -101,16 +107,18 @@ adm_df = adm_df.loc[adm_df["ACADEMIC_YEAR"].notnull()]
 
 adm_week_number = (
     lambda r: (
-        int(
-            (pd.to_datetime(r["create_date"])
-            - pd.to_datetime(date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1)))
-            / np.timedelta64(1,'W')
-        )
+        r["Week_Number"] 
+        - (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1]) 
+        + 1
     )
     if (
-        pd.to_datetime(r["create_date"]) >= pd.to_datetime(date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1))
+        r["Week_Number"] >= (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1])
     )
-    else 0
+    else (
+        53
+        + r["Week_Number"]
+        - (date((int(r["ACADEMIC_YEAR"]) - 1), 9, 1).isocalendar()[1])
+    )
 )
 adm_df["Admissions_Week"] = adm_df.apply(adm_week_number, axis=1)
 
