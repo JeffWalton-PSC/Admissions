@@ -1,10 +1,21 @@
+import numpy as np
 import pandas as pd
 from datetime import date
 
 from bokeh.layouts import widgetbox, row
 from bokeh.models.widgets import MultiSelect, RadioGroup, Select
 from bokeh.plotting import figure, curdoc
-from bokeh.palettes import Blues9
+from bokeh.palettes import Set1_9
+
+
+start_term = "2014.Spring"
+
+def date_diff_weeks(start, end):
+    """
+    returns the difference between two dates in integer weeks
+    """
+    diff = (pd.to_datetime(end) - pd.to_datetime(start))
+    return int( diff / np.timedelta64(1,'W'))
 
 
 def adm_week(d):
@@ -12,20 +23,16 @@ def adm_week(d):
     returns calendar week number and Admissions Week Number for a given date, d
     """
     year = d.year
-    if d >= date(year, 9, 1):
-        adm_year_start = year
-    else:
-        adm_year_start = year - 1
-
     week_number = d.isocalendar()[1]
-    adm_start_week = date(adm_year_start, 9, 1).isocalendar()[1]
 
-    if week_number >= adm_start_week:
-        adm_week_number = week_number - adm_start_week
+    if d >= date(year, 9, 1):
+        adm_start = date(year, 9, 1)
     else:
-        adm_week_number = 53 + (week_number - adm_start_week)
+        adm_start = date(year - 1, 9, 1)
 
-    return (week_number, adm_week_number)
+    adm_week_number = min(date_diff_weeks(adm_start, d), 53)
+
+    return week_number, adm_week_number
 
 
 def create_figure(df):
@@ -64,11 +71,13 @@ def create_figure(df):
 
     p.line(df.index, df[(term, stage, prog)], color="red", line_width=2, legend=term)
 
-    c = 0
+    c = 1
     for t in term_list:
-        p.line(df.index, df[(t, stage, prog)], color=Blues9[c], legend=t)
-        if c <= 7:
+        p.line(df.index, df[(t, stage)], color=Set1_9[c], legend=t)
+        if c <= 8:
             c += 1
+        else:
+            c = 1
 
     # week_number line
     p.line(
@@ -155,7 +164,7 @@ today = date.today()
 today_str = today.strftime("%Y%m%d")
 
 df = pd.read_hdf("data/stage_data", key="weekly")
-df = df[(df["year_term"] > "2011.Spring")]
+df = df[(df["year_term"] > start_term )]
 week_number, adm_week_number = adm_week(today)
 
 # curr_list = sorted(list(df['curriculum'].dropna().unique()))

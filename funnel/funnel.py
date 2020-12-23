@@ -6,13 +6,15 @@ from bokeh.models import HoverTool
 from bokeh.models.widgets import Select
 from bokeh.plotting import figure, curdoc, ColumnDataSource
 
+start_term = "2014.Spring"
+
 TOOLS = "pan,wheel_zoom,box_zoom,save,reset"
 
 today = date.today()
 today_str = today.strftime("%Y%m%d")
 
 df = pd.read_hdf("data/stage_data", key="weekly")
-df = df[(df["year_term"] > "2012.Spring")]
+df = df[(df["year_term"] > start_term)]
 
 summ = df.groupby(["year_term", "stage"]).sum()
 summ_t = summ.transpose()

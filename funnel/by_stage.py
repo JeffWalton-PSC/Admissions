@@ -5,7 +5,7 @@ from datetime import date
 from bokeh.layouts import widgetbox, row
 from bokeh.models.widgets import MultiSelect, RadioGroup, Select
 from bokeh.plotting import figure, curdoc
-from bokeh.palettes import Blues9
+from bokeh.palettes import Set1_9
 
 
 start_term = "2014.Spring"
@@ -70,11 +70,13 @@ def create_figure(df):
 
     p.line(df.index, df[(term, stage)], color="red", line_width=2, legend=term)
 
-    c = 0
+    c = 1
     for t in term_list:
-        p.line(df.index, df[(t, stage)], color=Blues9[c], legend=t)
-        if c <= 7:
+        p.line(df.index, df[(t, stage)], color=Set1_9[c], legend=t)
+        if c <= 8:
             c += 1
+        else:
+            c = 1
 
     # week_number line
     p.line(

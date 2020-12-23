@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from datetime import date
 
@@ -7,25 +8,35 @@ from bokeh.models import ColumnDataSource
 from bokeh.models.widgets import DataTable, TableColumn, RadioGroup
 
 
+start_term = "2014.Spring"
+this_yearterm = "2021.Fall"
+last_yearterm = "2020.Fall"
+twoyrago_yearterm = "2019.Fall"
+
+
+def date_diff_weeks(start, end):
+    """
+    returns the difference between two dates in integer weeks
+    """
+    diff = (pd.to_datetime(end) - pd.to_datetime(start))
+    return int( diff / np.timedelta64(1,'W'))
+
+
 def adm_week(d):
     """
     returns calendar week number and Admissions Week Number for a given date, d
     """
     year = d.year
-    if d >= date(year, 9, 1):
-        adm_year_start = year
-    else:
-        adm_year_start = year - 1
-
     week_number = d.isocalendar()[1]
-    adm_start_week = date(adm_year_start, 9, 1).isocalendar()[1]
 
-    if week_number >= adm_start_week:
-        adm_week_number = week_number - adm_start_week
+    if d >= date(year, 9, 1):
+        adm_start = date(year, 9, 1)
     else:
-        adm_week_number = 53 + (week_number - adm_start_week)
+        adm_start = date(year - 1, 9, 1)
 
-    return (week_number, adm_week_number)
+    adm_week_number = min(date_diff_weeks(adm_start, d), 53)
+
+    return week_number, adm_week_number
 
 
 # def update(attr, old, new):
@@ -67,10 +78,6 @@ def create_table(df):
     )
     return data_table
 
-
-this_yearterm = "2018.Fall"
-last_yearterm = "2017.Fall"
-twoyrago_yearterm = "2016.Fall"
 
 today = date.today()
 today_str = today.strftime("%Y%m%d")
