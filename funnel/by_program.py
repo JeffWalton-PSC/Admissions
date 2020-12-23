@@ -8,7 +8,7 @@ from bokeh.plotting import figure, curdoc
 from bokeh.palettes import Set1_9
 
 
-start_term = "2014.Spring"
+start_term = "2015.Spring"
 
 def date_diff_weeks(start, end):
     """
