@@ -8,7 +8,7 @@ from bokeh.plotting import figure, curdoc
 from bokeh.palettes import Set1_9
 
 
-start_term = "2015.Spring"
+start_term = "2014.Spring"
 
 def date_diff_weeks(start, end):
     """
@@ -51,9 +51,10 @@ def create_figure(df):
 
     y_max = df[(term, stage, prog)].max()
     for t in term_list:
-        ym = df[(t, stage, prog)].max()
-        if ym > y_max:
-            y_max = ym
+        if (t, stage, prog) in df.index.values:
+            ym = df[(t, stage, prog)].max()
+            if ym > y_max:
+                y_max = ym
 
     TOOLS = "pan,wheel_zoom,box_zoom,save,reset"
     # TOOLS="crosshair,pan,wheel_zoom,box_zoom,save,reset"
