@@ -8,6 +8,8 @@ from bokeh.plotting import figure, curdoc
 from bokeh.palettes import Blues9
 
 
+start_term = "2014.Spring"
+
 def date_diff_weeks(start, end):
     """
     returns the difference between two dates in integer weeks
@@ -106,7 +108,7 @@ today = date.today()
 today_str = today.strftime("%Y%m%d")
 
 df = pd.read_hdf("data/stage_data", key="weekly")
-df = df[(df["year_term"] > "2011.Spring")]
+df = df[(df["year_term"] > start_term)]
 
 # curr_list = sorted(list(df['curriculum'].dropna().unique()))
 
