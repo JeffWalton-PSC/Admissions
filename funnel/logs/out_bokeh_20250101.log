@@ -1,0 +1,1367 @@
+"***** batch file running" 
+Fri 09/15/2023 
+01:58 PM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2023-09-15 13:58:38,208 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2023-09-15 13:58:38,215 User authentication hooks NOT provided (default user enabled)
+2023-09-15 13:58:38,238 Bokeh app running at: http://localhost:5006/by_program
+2023-09-15 13:58:38,239 Bokeh app running at: http://localhost:5006/by_stage
+2023-09-15 13:58:38,239 Bokeh app running at: http://localhost:5006/funnel
+2023-09-15 13:58:38,239 Bokeh app running at: http://localhost:5006/table_by_program
+2023-09-15 13:58:38,239 Starting Bokeh server with process id: 8328
+F:\Applications\Admissions\funnel\by_stage.py:117: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  summ = df.groupby(["year_term", "stage"]).sum()
+2023-09-15 14:04:16,631 Error running application handler <bokeh.application.handlers.script.ScriptHandler object at 0x000001E74E725050>: tuple index out of range
+File 'by_stage.py', line 75, in create_figure:
+p.line(df.index, df[(t, stage)], color=Set1_9[c], legend_label=t) Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\application\handlers\code_runner.py", line 231, in run
+    exec(self._code, module.__dict__)
+  File "F:\Applications\Admissions\funnel\by_stage.py", line 145, in <module>
+    layout = row(controls, create_figure(summ_t))
+                           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Applications\Admissions\funnel\by_stage.py", line 75, in create_figure
+    p.line(df.index, df[(t, stage)], color=Set1_9[c], legend_label=t)
+                                           ~~~~~~^^^
+IndexError: tuple index out of range
+ 
+2023-09-15 14:04:17,008 WebSocket connection opened
+2023-09-15 14:04:17,009 ServerConnection created
+2023-09-15 15:53:55,109 WebSocket connection closed: code=1001, reason=None
+F:\Applications\Admissions\funnel\by_stage.py:117: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  summ = df.groupby(["year_term", "stage"]).sum()
+2023-09-18 08:20:00,364 Error running application handler <bokeh.application.handlers.script.ScriptHandler object at 0x000001E74E725050>: tuple index out of range
+File 'by_stage.py', line 75, in create_figure:
+p.line(df.index, df[(t, stage)], color=Set1_9[c], legend_label=t) Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\application\handlers\code_runner.py", line 231, in run
+    exec(self._code, module.__dict__)
+  File "F:\Applications\Admissions\funnel\by_stage.py", line 145, in <module>
+    layout = row(controls, create_figure(summ_t))
+                           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Applications\Admissions\funnel\by_stage.py", line 75, in create_figure
+    p.line(df.index, df[(t, stage)], color=Set1_9[c], legend_label=t)
+                                           ~~~~~~^^^
+IndexError: tuple index out of range
+ 
+2023-09-18 08:20:00,711 WebSocket connection opened
+2023-09-18 08:20:00,712 ServerConnection created
+2023-09-18 08:20:00,717 404 GET /favicon.ico (10.8.10.12) 1.00ms
+F:\Applications\Admissions\funnel\by_stage.py:117: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  summ = df.groupby(["year_term", "stage"]).sum()
+2023-09-19 10:47:03,772 Error running application handler <bokeh.application.handlers.script.ScriptHandler object at 0x000001E74E725050>: tuple index out of range
+File 'by_stage.py', line 75, in create_figure:
+p.line(df.index, df[(t, stage)], color=Set1_9[c], legend_label=t) Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\application\handlers\code_runner.py", line 231, in run
+    exec(self._code, module.__dict__)
+  File "F:\Applications\Admissions\funnel\by_stage.py", line 145, in <module>
+    layout = row(controls, create_figure(summ_t))
+                           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Applications\Admissions\funnel\by_stage.py", line 75, in create_figure
+    p.line(df.index, df[(t, stage)], color=Set1_9[c], legend_label=t)
+                                           ~~~~~~^^^
+IndexError: tuple index out of range
+ 
+2023-09-19 10:47:04,110 WebSocket connection opened
+2023-09-19 10:47:04,111 ServerConnection created
+^C"***** batch file running" 
+Tue 09/19/2023 
+12:42 PM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2023-09-19 12:42:23,809 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2023-09-19 12:42:23,821 User authentication hooks NOT provided (default user enabled)
+2023-09-19 12:42:23,850 Bokeh app running at: http://localhost:5006/by_program
+2023-09-19 12:42:23,850 Bokeh app running at: http://localhost:5006/by_stage
+2023-09-19 12:42:23,850 Bokeh app running at: http://localhost:5006/funnel
+2023-09-19 12:42:23,851 Bokeh app running at: http://localhost:5006/table_by_program
+2023-09-19 12:42:23,851 Starting Bokeh server with process id: 3116
+2023-09-19 12:42:38,838 WebSocket connection opened
+2023-09-19 12:42:38,839 ServerConnection created
+2023-09-19 14:14:00,218 WebSocket connection opened
+2023-09-19 14:14:00,227 ServerConnection created
+2023-09-19 14:14:06,305 WebSocket connection closed: code=1001, reason=None
+2023-09-19 14:14:06,414 WebSocket connection opened
+2023-09-19 14:14:06,415 ServerConnection created
+2023-09-19 14:14:16,225 WebSocket connection closed: code=1001, reason=None
+2023-09-19 14:14:20,209 WebSocket connection closed: code=1001, reason=None
+2023-09-19 16:01:56,336 WebSocket connection opened
+2023-09-19 16:01:56,342 ServerConnection created
+2023-09-19 18:18:24,165 WebSocket connection closed: code=1001, reason=None
+2023-09-19 19:18:55,109 WebSocket connection opened
+2023-09-19 19:18:55,115 404 GET /favicon.ico (10.1.1.5) 1.96ms
+2023-09-19 19:18:55,115 ServerConnection created
+2023-09-19 19:40:24,899 WebSocket connection closed: code=1001, reason=None
+2023-09-20 08:24:29,745 WebSocket connection opened
+2023-09-20 08:24:29,751 404 GET /favicon.ico (10.1.1.6) 1.01ms
+2023-09-20 08:24:29,753 ServerConnection created
+2023-09-20 08:24:48,597 WebSocket connection closed: code=1001, reason=None
+2023-09-20 09:59:36,686 WebSocket connection opened
+2023-09-20 09:59:36,694 ServerConnection created
+2023-09-20 09:59:36,700 404 GET /favicon.ico (10.8.10.12) 1.09ms
+2023-09-21 13:10:49,484 WebSocket connection closed: code=1001, reason=None
+2023-09-21 13:10:49,648 WebSocket connection opened
+2023-09-21 13:10:49,650 ServerConnection created
+2023-09-22 16:06:48,200 WebSocket connection closed: code=1001, reason=None
+2023-09-22 16:06:48,444 WebSocket connection opened
+2023-09-22 16:06:48,445 ServerConnection created
+2023-09-22 16:07:01,016 WebSocket connection closed: code=1001, reason=None
+2023-09-25 08:36:52,431 WebSocket connection opened
+2023-09-25 08:36:52,716 404 GET /favicon.ico (10.8.10.12) 69.00ms
+2023-09-25 08:36:52,731 ServerConnection created
+2023-09-26 09:16:58,861 WebSocket connection closed: code=1001, reason=None
+2023-09-26 09:16:59,034 WebSocket connection opened
+2023-09-26 09:16:59,036 ServerConnection created
+2023-09-26 09:17:45,777 WebSocket connection closed: code=1001, reason=None
+2023-09-26 09:17:45,885 WebSocket connection opened
+2023-09-26 09:17:45,888 ServerConnection created
+2023-09-26 16:33:36,352 WebSocket connection closed: code=1001, reason=None
+2023-09-28 11:58:52,360 WebSocket connection opened
+2023-09-28 11:58:52,365 ServerConnection created
+2023-09-28 11:58:52,372 404 GET /favicon.ico (10.8.10.12) 3.01ms
+2023-09-29 09:29:31,810 WebSocket connection closed: code=1001, reason=None
+2023-09-29 09:29:31,978 WebSocket connection opened
+2023-09-29 09:29:31,980 ServerConnection created
+2023-09-29 15:54:42,204 WebSocket connection closed: code=1001, reason=None
+2023-10-02 08:23:06,946 WebSocket connection opened
+2023-10-02 08:23:06,949 ServerConnection created
+2023-10-02 08:23:06,956 404 GET /favicon.ico (10.8.10.12) 2.01ms
+2023-10-04 13:53:08,441 WebSocket connection closed: code=1001, reason=None
+2023-10-04 13:53:08,716 WebSocket connection opened
+2023-10-04 13:53:08,717 ServerConnection created
+2023-10-06 09:48:31,838 WebSocket connection closed: code=1001, reason=None
+2023-10-06 09:48:32,080 WebSocket connection opened
+2023-10-06 09:48:32,081 ServerConnection created
+2023-10-06 16:32:05,352 WebSocket connection closed: code=1001, reason=None
+2023-10-10 08:53:00,390 WebSocket connection opened
+2023-10-10 08:53:00,393 ServerConnection created
+2023-10-10 08:53:00,397 404 GET /favicon.ico (10.8.10.12) 0.97ms
+2023-10-11 12:25:45,700 WebSocket connection closed: code=1001, reason=None
+2023-10-11 12:25:46,638 WebSocket connection opened
+2023-10-11 12:25:46,639 ServerConnection created
+2023-10-12 09:53:39,385 WebSocket connection closed: code=None, reason=None
+2023-10-13 16:07:06,965 WebSocket connection opened
+2023-10-13 16:07:06,970 ServerConnection created
+2023-10-13 16:07:55,372 WebSocket connection closed: code=1001, reason=None
+2023-10-16 08:35:12,175 WebSocket connection opened
+2023-10-16 08:35:12,534 404 GET /favicon.ico (10.8.10.12) 26.01ms
+2023-10-16 08:35:12,563 ServerConnection created
+2023-10-17 08:05:13,938 WebSocket connection closed: code=1001, reason=None
+2023-10-17 08:05:14,180 WebSocket connection opened
+2023-10-17 08:05:14,183 ServerConnection created
+2023-10-17 08:31:01,998 WebSocket connection closed: code=1001, reason=None
+2023-10-17 08:31:02,248 WebSocket connection opened
+2023-10-17 08:31:02,253 ServerConnection created
+2023-10-18 08:25:41,565 WebSocket connection closed: code=1001, reason=None
+2023-10-18 08:25:41,807 WebSocket connection opened
+2023-10-18 08:25:41,808 ServerConnection created
+2023-10-19 03:35:05,739 WebSocket connection closed: code=None, reason=None
+2023-10-20 13:43:53,615 WebSocket connection opened
+2023-10-20 13:43:53,816 ServerConnection created
+2023-10-20 13:44:16,881 WebSocket connection closed: code=1001, reason=None
+2023-10-23 08:05:33,800 WebSocket connection opened
+2023-10-23 08:05:33,806 ServerConnection created
+2023-10-23 08:05:33,812 404 GET /favicon.ico (10.8.10.12) 2.00ms
+2023-10-25 13:08:13,562 WebSocket connection closed: code=1001, reason=None
+2023-10-25 13:08:14,284 WebSocket connection opened
+2023-10-25 13:08:14,286 ServerConnection created
+2023-10-26 12:22:13,226 WebSocket connection closed: code=1001, reason=None
+2023-10-26 12:22:14,400 WebSocket connection opened
+2023-10-26 12:22:14,476 ServerConnection created
+2023-10-26 15:14:11,755 WebSocket connection closed: code=1001, reason=None
+2023-10-26 15:14:12,001 WebSocket connection opened
+2023-10-26 15:14:12,004 ServerConnection created
+2023-10-27 11:19:37,726 WebSocket connection opened
+2023-10-27 11:19:37,731 ServerConnection created
+2023-10-27 11:19:46,205 WebSocket connection closed: code=1001, reason=None
+2023-10-27 14:04:14,381 WebSocket connection closed: code=1001, reason=None
+2023-10-30 08:04:34,120 WebSocket connection opened
+2023-10-30 08:04:34,124 ServerConnection created
+2023-10-30 08:04:34,136 404 GET /favicon.ico (10.8.10.12) 2.00ms
+2023-10-31 09:41:41,320 WebSocket connection closed: code=1001, reason=None
+2023-10-31 09:41:41,657 WebSocket connection opened
+2023-10-31 09:41:41,684 ServerConnection created
+2023-11-02 11:46:07,218 WebSocket connection closed: code=1001, reason=None
+2023-11-02 11:46:08,229 WebSocket connection opened
+2023-11-02 11:46:08,271 ServerConnection created
+2023-11-03 08:24:09,190 WebSocket connection closed: code=1001, reason=None
+2023-11-03 08:24:09,436 WebSocket connection opened
+2023-11-03 08:24:09,438 ServerConnection created
+2023-11-03 15:06:45,819 WebSocket connection closed: code=1001, reason=None
+2023-11-06 08:35:25,961 WebSocket connection opened
+2023-11-06 08:35:26,700 404 GET /favicon.ico (10.8.10.12) 1280.14ms
+2023-11-06 08:35:26,710 ServerConnection created
+2023-11-07 08:29:21,871 WebSocket connection closed: code=1001, reason=None
+2023-11-07 08:29:22,102 WebSocket connection opened
+2023-11-07 08:29:22,105 ServerConnection created
+2023-11-07 08:47:12,097 WebSocket connection closed: code=None, reason=None
+2023-11-07 17:25:12,589 WebSocket connection opened
+2023-11-07 17:25:12,593 ServerConnection created
+2023-11-08 08:44:06,943 WebSocket connection closed: code=1001, reason=None
+2023-11-08 08:44:07,570 WebSocket connection opened
+2023-11-08 08:44:08,113 ServerConnection created
+2023-11-09 16:05:52,034 WebSocket connection closed: code=1001, reason=None
+2023-11-13 08:07:23,638 404 GET /favicon.ico (10.8.10.12) 1.02ms
+2023-11-13 08:07:23,643 WebSocket connection opened
+2023-11-13 08:07:23,647 ServerConnection created
+2023-11-13 15:53:35,493 WebSocket connection closed: code=1001, reason=None
+2023-11-13 15:53:35,742 WebSocket connection opened
+2023-11-13 15:53:35,743 ServerConnection created
+2023-11-14 08:17:29,418 WebSocket connection closed: code=1001, reason=None
+2023-11-14 08:17:30,051 WebSocket connection opened
+2023-11-14 08:17:30,052 ServerConnection created
+2023-11-14 14:05:35,820 WebSocket connection closed: code=1001, reason=None
+2023-11-14 14:05:36,394 WebSocket connection opened
+2023-11-14 14:05:36,395 ServerConnection created
+2023-11-15 08:16:28,046 WebSocket connection closed: code=1001, reason=None
+2023-11-15 08:16:28,794 WebSocket connection opened
+2023-11-15 08:16:28,797 ServerConnection created
+2023-11-15 13:42:37,255 WebSocket connection closed: code=1001, reason=None
+2023-11-15 13:42:38,403 WebSocket connection opened
+2023-11-15 13:42:38,440 ServerConnection created
+2023-11-16 15:09:59,178 WebSocket connection closed: code=1001, reason=None
+2023-11-16 15:09:59,457 WebSocket connection opened
+2023-11-16 15:09:59,459 ServerConnection created
+2023-11-17 12:22:33,543 WebSocket connection closed: code=1001, reason=None
+2023-11-17 12:22:33,983 WebSocket connection opened
+2023-11-17 12:22:34,059 ServerConnection created
+2023-11-17 15:24:28,367 WebSocket connection closed: code=1001, reason=None
+2023-11-27 08:46:06,292 404 GET /favicon.ico (10.8.10.12) 257.00ms
+2023-11-27 08:46:07,178 WebSocket connection opened
+2023-11-27 08:46:07,240 ServerConnection created
+2023-11-28 08:25:58,061 WebSocket connection closed: code=1001, reason=None
+2023-11-28 08:25:58,349 WebSocket connection opened
+2023-11-28 08:25:58,352 ServerConnection created
+2023-11-28 08:26:01,219 WebSocket connection closed: code=1001, reason=None
+2023-11-28 08:26:01,355 WebSocket connection opened
+2023-11-28 08:26:01,356 ServerConnection created
+2023-11-29 11:20:32,495 WebSocket connection closed: code=1001, reason=None
+2023-11-29 11:20:32,749 WebSocket connection opened
+2023-11-29 11:20:32,750 ServerConnection created
+2023-11-30 16:24:55,669 WebSocket connection closed: code=1001, reason=None
+2023-11-30 16:24:56,299 WebSocket connection opened
+2023-11-30 16:24:56,299 ServerConnection created
+2023-12-01 15:22:54,006 WebSocket connection closed: code=1001, reason=None
+2023-12-01 15:22:54,260 WebSocket connection opened
+2023-12-01 15:22:54,264 ServerConnection created
+2023-12-01 15:23:04,231 WebSocket connection closed: code=1001, reason=None
+2023-12-04 10:13:06,629 WebSocket connection opened
+2023-12-04 10:13:06,636 ServerConnection created
+2023-12-04 10:13:06,639 404 GET /favicon.ico (10.8.10.12) 0.99ms
+2023-12-04 14:24:12,854 WebSocket connection closed: code=1001, reason=None
+2023-12-04 14:24:12,951 WebSocket connection opened
+2023-12-04 14:24:12,953 ServerConnection created
+2023-12-05 08:08:11,534 WebSocket connection closed: code=1001, reason=None
+2023-12-05 08:08:11,790 WebSocket connection opened
+2023-12-05 08:08:11,791 ServerConnection created
+2023-12-05 09:16:45,564 WebSocket connection closed: code=1001, reason=None
+2023-12-05 09:16:45,814 WebSocket connection opened
+2023-12-05 09:16:45,815 ServerConnection created
+2023-12-06 08:56:23,653 WebSocket connection closed: code=1001, reason=None
+2023-12-06 08:56:23,894 WebSocket connection opened
+2023-12-06 08:56:23,895 ServerConnection created
+2023-12-06 10:46:51,513 WebSocket connection closed: code=1001, reason=None
+2023-12-06 10:46:52,000 WebSocket connection opened
+2023-12-06 10:46:52,001 ServerConnection created
+2023-12-07 13:50:33,414 WebSocket connection closed: code=1001, reason=None
+2023-12-07 13:50:34,457 WebSocket connection opened
+2023-12-07 13:50:34,498 ServerConnection created
+2023-12-07 15:14:25,782 WebSocket connection closed: code=None, reason=None
+2023-12-12 08:37:25,842 WebSocket connection opened
+2023-12-12 08:37:26,109 404 GET /favicon.ico (10.8.10.12) 1035.04ms
+2023-12-12 08:37:26,144 ServerConnection created
+2023-12-12 15:12:32,330 WebSocket connection closed: code=1001, reason=None
+2023-12-12 15:12:32,577 WebSocket connection opened
+2023-12-12 15:12:32,583 ServerConnection created
+2023-12-13 07:53:37,875 WebSocket connection closed: code=None, reason=None
+2023-12-15 08:05:33,340 WebSocket connection opened
+2023-12-15 08:05:33,345 ServerConnection created
+2023-12-15 13:53:55,115 WebSocket connection closed: code=1001, reason=None
+2023-12-15 13:53:55,352 WebSocket connection opened
+2023-12-15 13:53:55,353 ServerConnection created
+2023-12-15 13:53:58,221 WebSocket connection closed: code=1001, reason=None
+2023-12-15 13:53:58,337 WebSocket connection opened
+2023-12-15 13:53:58,338 ServerConnection created
+2023-12-15 14:39:33,828 WebSocket connection closed: code=1001, reason=None
+2023-12-18 08:11:06,282 WebSocket connection opened
+2023-12-18 08:11:06,287 ServerConnection created
+2023-12-18 08:11:06,299 404 GET /favicon.ico (10.8.10.12) 2.94ms
+2023-12-19 17:05:11,719 WebSocket connection closed: code=1001, reason=None
+2023-12-19 17:05:11,984 WebSocket connection opened
+2023-12-19 17:05:11,986 ServerConnection created
+2023-12-20 08:29:33,061 WebSocket connection closed: code=1001, reason=None
+2023-12-20 08:29:33,288 WebSocket connection opened
+2023-12-20 08:29:33,289 ServerConnection created
+2023-12-20 12:52:46,547 WebSocket connection closed: code=1001, reason=None
+2024-01-02 08:52:25,537 WebSocket connection opened
+2024-01-02 08:52:25,654 404 GET /favicon.ico (10.8.10.12) 12.00ms
+2024-01-02 08:52:25,659 ServerConnection created
+2024-01-03 15:35:44,342 WebSocket connection closed: code=None, reason=None
+2024-01-04 09:58:57,925 WebSocket connection opened
+2024-01-04 09:58:57,929 ServerConnection created
+2024-01-04 16:25:28,403 WebSocket connection closed: code=1001, reason=None
+2024-01-04 16:25:28,635 WebSocket connection opened
+2024-01-04 16:25:28,637 ServerConnection created
+2024-01-04 17:41:22,062 WebSocket connection closed: code=None, reason=None
+2024-01-05 08:21:55,593 WebSocket connection opened
+2024-01-05 08:21:55,598 ServerConnection created
+2024-01-05 14:51:16,563 WebSocket connection closed: code=1001, reason=None
+2024-01-08 08:08:32,435 WebSocket connection opened
+2024-01-08 08:08:32,438 ServerConnection created
+2024-01-08 08:08:32,459 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-01-09 12:19:33,986 WebSocket connection closed: code=1001, reason=None
+2024-01-09 12:19:34,228 WebSocket connection opened
+2024-01-09 12:19:34,229 ServerConnection created
+2024-01-09 12:20:29,255 WebSocket connection closed: code=1001, reason=None
+2024-01-09 12:20:29,379 WebSocket connection opened
+2024-01-09 12:20:29,380 ServerConnection created
+2024-01-09 17:00:12,751 WebSocket connection closed: code=None, reason=None
+2024-01-10 11:56:53,992 WebSocket connection opened
+2024-01-10 11:56:53,993 ServerConnection created
+2024-01-10 16:42:28,482 WebSocket connection closed: code=1001, reason=None
+2024-01-10 16:42:28,976 WebSocket connection opened
+2024-01-10 16:42:28,999 ServerConnection created
+2024-01-12 12:50:12,080 WebSocket connection closed: code=1001, reason=None
+2024-01-12 12:50:12,429 WebSocket connection opened
+2024-01-12 12:50:12,468 ServerConnection created
+2024-01-12 15:06:00,801 WebSocket connection closed: code=1001, reason=None
+2024-01-16 08:07:08,333 WebSocket connection opened
+2024-01-16 08:07:08,339 ServerConnection created
+2024-01-16 08:07:08,347 404 GET /favicon.ico (10.8.10.12) 1.96ms
+2024-01-16 12:02:08,216 WebSocket connection closed: code=None, reason=None
+2024-01-17 16:12:03,644 WebSocket connection opened
+2024-01-17 16:12:03,645 ServerConnection created
+2024-01-17 17:34:02,627 WebSocket connection closed: code=None, reason=None
+2024-01-18 08:24:36,487 WebSocket connection opened
+2024-01-18 08:24:36,488 ServerConnection created
+2024-01-18 11:23:02,593 WebSocket connection closed: code=1001, reason=None
+2024-01-18 11:23:02,690 WebSocket connection opened
+2024-01-18 11:23:02,691 ServerConnection created
+2024-01-19 08:21:27,598 WebSocket connection closed: code=1001, reason=None
+2024-01-19 08:21:27,824 WebSocket connection opened
+2024-01-19 08:21:27,825 ServerConnection created
+2024-01-19 16:37:57,485 WebSocket connection closed: code=None, reason=None
+2024-01-22 08:38:29,294 WebSocket connection opened
+2024-01-22 08:38:29,298 ServerConnection created
+2024-01-22 08:38:29,303 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-01-22 13:39:20,299 WebSocket connection closed: code=1001, reason=None
+2024-01-22 13:39:20,541 WebSocket connection opened
+2024-01-22 13:39:20,542 ServerConnection created
+2024-01-24 08:48:16,864 WebSocket connection closed: code=1001, reason=None
+2024-01-24 08:48:17,107 WebSocket connection opened
+2024-01-24 08:48:17,108 ServerConnection created
+2024-01-24 13:48:39,188 WebSocket connection closed: code=None, reason=None
+2024-01-25 10:39:46,897 WebSocket connection opened
+2024-01-25 10:39:46,898 ServerConnection created
+2024-01-25 11:07:41,532 WebSocket connection closed: code=1001, reason=None
+2024-01-25 11:07:41,628 WebSocket connection opened
+2024-01-25 11:07:41,629 ServerConnection created
+2024-01-26 11:23:19,240 WebSocket connection closed: code=1001, reason=None
+2024-01-26 11:23:19,472 WebSocket connection opened
+2024-01-26 11:23:19,473 ServerConnection created
+2024-01-26 16:26:34,165 WebSocket connection closed: code=1001, reason=None
+2024-01-29 08:19:08,547 WebSocket connection opened
+2024-01-29 08:19:08,549 ServerConnection created
+2024-01-29 08:19:08,560 404 GET /favicon.ico (10.8.10.12) 0.97ms
+2024-01-30 09:25:00,998 WebSocket connection closed: code=1001, reason=None
+2024-01-30 09:25:01,229 WebSocket connection opened
+2024-01-30 09:25:01,230 ServerConnection created
+2024-01-30 09:25:42,833 WebSocket connection closed: code=1001, reason=None
+2024-01-30 09:25:42,950 WebSocket connection opened
+2024-01-30 09:25:42,951 ServerConnection created
+2024-01-31 08:04:17,490 WebSocket connection closed: code=1001, reason=None
+2024-01-31 08:04:17,716 WebSocket connection opened
+2024-01-31 08:04:17,717 ServerConnection created
+2024-02-01 08:27:24,127 WebSocket connection closed: code=1001, reason=None
+2024-02-01 08:27:24,381 WebSocket connection opened
+2024-02-01 08:27:24,382 ServerConnection created
+2024-02-01 13:33:25,968 WebSocket connection closed: code=1001, reason=None
+2024-02-01 13:33:26,195 WebSocket connection opened
+2024-02-01 13:33:26,196 ServerConnection created
+2024-02-02 11:51:52,089 WebSocket connection closed: code=1001, reason=None
+2024-02-02 11:51:52,331 WebSocket connection opened
+2024-02-02 11:51:52,332 ServerConnection created
+2024-02-02 16:47:11,170 WebSocket connection closed: code=1001, reason=None
+2024-02-05 08:44:44,402 WebSocket connection opened
+2024-02-05 08:44:44,403 ServerConnection created
+2024-02-05 08:44:44,410 404 GET /favicon.ico (10.8.10.12) 0.95ms
+2024-02-06 11:02:52,009 WebSocket connection closed: code=1001, reason=None
+2024-02-06 11:02:52,268 WebSocket connection opened
+2024-02-06 11:02:52,269 ServerConnection created
+2024-02-06 13:12:55,285 WebSocket connection closed: code=1001, reason=None
+2024-02-06 13:12:55,390 WebSocket connection opened
+2024-02-06 13:12:55,391 ServerConnection created
+2024-02-07 12:58:05,577 WebSocket connection closed: code=1001, reason=None
+2024-02-07 12:58:05,816 WebSocket connection opened
+2024-02-07 12:58:05,817 ServerConnection created
+2024-02-08 09:14:18,973 WebSocket connection closed: code=1001, reason=None
+2024-02-08 09:14:19,211 WebSocket connection opened
+2024-02-08 09:14:19,212 ServerConnection created
+2024-02-08 09:20:08,753 WebSocket connection closed: code=None, reason=None
+2024-02-09 10:31:30,219 WebSocket connection opened
+2024-02-09 10:31:30,220 ServerConnection created
+2024-02-09 12:22:57,878 WebSocket connection closed: code=1001, reason=None
+2024-02-12 09:03:55,846 WebSocket connection opened
+2024-02-12 09:03:55,848 ServerConnection created
+2024-02-12 09:03:55,857 404 GET /favicon.ico (10.8.10.12) 0.95ms
+2024-02-12 16:27:22,098 404 GET /favicon.ico (10.10.11.249) 0.99ms
+2024-02-12 16:27:22,103 WebSocket connection opened
+2024-02-12 16:27:22,104 ServerConnection created
+2024-02-12 16:28:06,142 WebSocket connection closed: code=1001, reason=None
+2024-02-12 17:11:19,493 WebSocket connection opened
+2024-02-12 17:11:19,494 ServerConnection created
+2024-02-12 17:22:13,865 WebSocket connection closed: code=None, reason=None
+2024-02-13 10:09:29,326 WebSocket connection closed: code=1001, reason=None
+2024-02-13 10:09:29,612 WebSocket connection opened
+2024-02-13 10:09:29,613 ServerConnection created
+2024-02-14 08:30:02,921 WebSocket connection closed: code=1001, reason=None
+2024-02-14 08:30:03,171 WebSocket connection opened
+2024-02-14 08:30:03,172 ServerConnection created
+2024-02-14 11:55:10,056 WebSocket connection closed: code=1001, reason=None
+2024-02-14 11:55:10,164 WebSocket connection opened
+2024-02-14 11:55:10,165 ServerConnection created
+2024-02-14 12:16:00,765 WebSocket connection closed: code=None, reason=None
+2024-02-19 08:50:16,818 WebSocket connection opened
+2024-02-19 08:50:16,823 ServerConnection created
+2024-02-20 08:27:30,094 WebSocket connection closed: code=1001, reason=None
+2024-02-20 08:27:30,329 WebSocket connection opened
+2024-02-20 08:27:30,330 ServerConnection created
+2024-02-21 08:39:37,483 WebSocket connection closed: code=1001, reason=None
+2024-02-21 08:39:37,694 WebSocket connection opened
+2024-02-21 08:39:37,695 ServerConnection created
+2024-02-23 09:57:08,432 WebSocket connection closed: code=1001, reason=None
+2024-02-23 09:57:08,674 WebSocket connection opened
+2024-02-23 09:57:08,677 ServerConnection created
+2024-02-23 16:23:06,835 WebSocket connection closed: code=1001, reason=None
+2024-02-26 07:55:01,571 WebSocket connection opened
+2024-02-26 07:55:01,575 ServerConnection created
+2024-02-26 07:55:01,584 404 GET /favicon.ico (10.8.10.12) 2.00ms
+2024-02-27 08:15:11,413 WebSocket connection closed: code=1001, reason=None
+2024-02-27 08:15:11,668 WebSocket connection opened
+2024-02-27 08:15:11,669 ServerConnection created
+2024-02-28 11:57:14,319 WebSocket connection closed: code=1001, reason=None
+2024-02-28 11:57:14,556 WebSocket connection opened
+2024-02-28 11:57:14,557 ServerConnection created
+2024-02-29 09:15:31,158 WebSocket connection closed: code=1001, reason=None
+2024-02-29 09:15:31,378 WebSocket connection opened
+2024-02-29 09:15:31,379 ServerConnection created
+2024-03-01 10:24:51,880 WebSocket connection closed: code=1001, reason=None
+2024-03-01 10:24:52,105 WebSocket connection opened
+2024-03-01 10:24:52,106 ServerConnection created
+2024-03-01 16:28:23,445 WebSocket connection closed: code=1001, reason=None
+2024-03-04 08:24:56,405 WebSocket connection opened
+2024-03-04 08:24:56,411 ServerConnection created
+2024-03-04 08:24:56,416 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-03-04 12:14:25,818 WebSocket connection closed: code=None, reason=None
+2024-03-04 16:07:16,700 WebSocket connection opened
+2024-03-04 16:07:16,705 ServerConnection created
+2024-03-05 08:30:59,629 WebSocket connection closed: code=1001, reason=None
+2024-03-05 08:30:59,856 WebSocket connection opened
+2024-03-05 08:30:59,856 ServerConnection created
+2024-03-05 12:44:44,852 WebSocket connection closed: code=1001, reason=None
+2024-03-05 12:44:45,086 WebSocket connection opened
+2024-03-05 12:44:45,087 ServerConnection created
+2024-03-06 16:35:55,260 WebSocket connection closed: code=1001, reason=None
+2024-03-06 16:35:55,445 WebSocket connection opened
+2024-03-06 16:35:55,446 ServerConnection created
+2024-03-06 16:38:40,391 WebSocket connection closed: code=1001, reason=None
+2024-03-06 16:38:40,616 WebSocket connection opened
+2024-03-06 16:38:40,617 ServerConnection created
+2024-03-07 10:09:37,440 WebSocket connection closed: code=1001, reason=None
+2024-03-07 10:09:37,691 WebSocket connection opened
+2024-03-07 10:09:37,693 ServerConnection created
+2024-03-08 12:07:03,472 WebSocket connection closed: code=1001, reason=None
+2024-03-08 12:07:03,703 WebSocket connection opened
+2024-03-08 12:07:03,704 ServerConnection created
+2024-03-08 15:15:15,928 WebSocket connection closed: code=1001, reason=None
+2024-03-12 08:39:47,408 WebSocket connection opened
+2024-03-12 08:39:47,427 ServerConnection created
+2024-03-12 08:39:47,447 404 GET /favicon.ico (10.8.10.12) 16.00ms
+2024-03-13 10:53:24,523 WebSocket connection closed: code=1001, reason=None
+2024-03-13 10:53:24,753 WebSocket connection opened
+2024-03-13 10:53:24,756 ServerConnection created
+2024-03-14 10:59:40,100 WebSocket connection closed: code=None, reason=None
+2024-03-20 08:13:20,210 WebSocket connection opened
+2024-03-20 08:13:20,215 ServerConnection created
+2024-03-20 08:13:20,219 404 GET /favicon.ico (10.8.10.12) 0.00ms
+2024-03-20 15:08:03,188 WebSocket connection closed: code=1001, reason=None
+2024-03-20 15:25:44,417 WebSocket connection opened
+2024-03-20 15:25:44,419 ServerConnection created
+2024-03-20 15:25:44,426 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-03-21 13:03:56,578 WebSocket connection closed: code=1001, reason=None
+2024-03-21 13:03:56,804 WebSocket connection opened
+2024-03-21 13:03:56,807 ServerConnection created
+2024-03-21 13:04:20,138 WebSocket connection closed: code=1001, reason=None
+2024-03-21 13:04:20,445 WebSocket connection opened
+2024-03-21 13:04:20,445 ServerConnection created
+2024-03-21 14:28:59,547 WebSocket connection closed: code=1001, reason=None
+2024-03-21 14:28:59,775 WebSocket connection opened
+2024-03-21 14:28:59,776 ServerConnection created
+2024-03-21 14:29:17,942 WebSocket connection closed: code=1001, reason=None
+2024-03-21 14:29:18,056 WebSocket connection opened
+2024-03-21 14:29:18,057 ServerConnection created
+2024-03-22 14:08:34,458 WebSocket connection closed: code=1001, reason=None
+2024-03-22 14:08:34,594 WebSocket connection opened
+2024-03-22 14:08:34,595 ServerConnection created
+2024-03-22 14:08:41,471 WebSocket connection closed: code=1001, reason=None
+2024-03-25 10:17:57,301 WebSocket connection opened
+2024-03-25 10:17:57,357 ServerConnection created
+2024-03-26 09:14:31,101 WebSocket connection closed: code=1001, reason=None
+2024-03-26 09:14:31,326 WebSocket connection opened
+2024-03-26 09:14:31,327 ServerConnection created
+2024-03-27 11:52:53,351 WebSocket connection closed: code=1001, reason=None
+2024-03-27 11:52:53,572 WebSocket connection opened
+2024-03-27 11:52:53,573 ServerConnection created
+2024-03-29 13:45:30,368 WebSocket connection closed: code=1001, reason=None
+2024-03-29 13:45:30,592 WebSocket connection opened
+2024-03-29 13:45:30,593 ServerConnection created
+2024-03-29 16:31:59,829 WebSocket connection closed: code=1001, reason=None
+2024-04-01 09:27:59,772 WebSocket connection opened
+2024-04-01 09:27:59,778 ServerConnection created
+2024-04-01 09:27:59,789 404 GET /favicon.ico (10.8.10.12) 2.00ms
+2024-04-02 08:26:56,424 WebSocket connection closed: code=1001, reason=None
+2024-04-02 08:26:56,659 WebSocket connection opened
+2024-04-02 08:26:56,660 ServerConnection created
+2024-04-03 15:28:09,506 WebSocket connection closed: code=1001, reason=None
+2024-04-03 15:28:09,805 WebSocket connection opened
+2024-04-03 15:28:09,806 ServerConnection created
+2024-04-03 16:52:42,562 WebSocket connection closed: code=None, reason=None
+2024-04-04 14:20:04,089 WebSocket connection opened
+2024-04-04 14:20:04,094 ServerConnection created
+2024-04-06 08:02:52,279 WebSocket connection closed: code=None, reason=None
+2024-04-06 14:01:25,414 WebSocket connection opened
+2024-04-06 14:01:25,418 ServerConnection created
+2024-04-06 14:57:43,104 WebSocket connection closed: code=None, reason=None
+2024-04-08 14:24:15,455 WebSocket connection opened
+2024-04-08 14:24:15,464 ServerConnection created
+2024-04-10 08:56:24,712 WebSocket connection closed: code=1001, reason=None
+2024-04-10 08:56:24,945 WebSocket connection opened
+2024-04-10 08:56:24,948 ServerConnection created
+2024-04-10 09:24:20,290 WebSocket connection closed: code=1001, reason=None
+2024-04-10 09:25:59,301 WebSocket connection opened
+2024-04-10 09:25:59,304 ServerConnection created
+2024-04-10 09:25:59,311 404 GET /favicon.ico (10.8.10.12) 0.00ms
+2024-04-10 10:58:53,145 WebSocket connection closed: code=1001, reason=None
+2024-04-10 10:58:53,365 WebSocket connection opened
+2024-04-10 10:58:53,366 ServerConnection created
+2024-04-10 16:08:29,338 WebSocket connection closed: code=None, reason=None
+2024-04-12 11:34:44,246 WebSocket connection opened
+2024-04-12 11:34:44,253 ServerConnection created
+2024-04-12 11:34:44,262 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-04-12 16:19:35,630 WebSocket connection closed: code=1001, reason=None
+2024-04-15 08:53:44,149 WebSocket connection opened
+2024-04-15 08:53:44,154 ServerConnection created
+2024-04-15 08:53:44,160 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-04-15 12:11:43,781 WebSocket connection closed: code=None, reason=None
+2024-04-15 16:00:06,684 WebSocket connection opened
+2024-04-15 16:00:06,685 ServerConnection created
+2024-04-16 08:20:32,923 WebSocket connection closed: code=1001, reason=None
+2024-04-16 08:20:33,144 WebSocket connection opened
+2024-04-16 08:20:33,145 ServerConnection created
+2024-04-16 08:20:48,172 WebSocket connection closed: code=1001, reason=None
+2024-04-16 08:20:48,283 WebSocket connection opened
+2024-04-16 08:20:48,284 ServerConnection created
+2024-04-17 14:01:31,803 WebSocket connection closed: code=1001, reason=None
+2024-04-17 14:01:32,042 WebSocket connection opened
+2024-04-17 14:01:32,043 ServerConnection created
+2024-04-17 14:24:16,650 WebSocket connection closed: code=1001, reason=None
+2024-04-17 14:24:16,879 WebSocket connection opened
+2024-04-17 14:24:16,879 ServerConnection created
+2024-04-18 08:57:27,611 WebSocket connection closed: code=1001, reason=None
+2024-04-18 08:57:27,832 WebSocket connection opened
+2024-04-18 08:57:27,833 ServerConnection created
+2024-04-18 10:19:14,766 WebSocket connection closed: code=1001, reason=None
+2024-04-18 10:19:15,062 WebSocket connection opened
+2024-04-18 10:19:15,063 ServerConnection created
+2024-04-18 10:55:25,811 WebSocket connection closed: code=1001, reason=None
+2024-04-22 08:38:47,653 WebSocket connection opened
+2024-04-22 08:38:47,654 ServerConnection created
+2024-04-22 08:38:47,664 404 GET /favicon.ico (10.8.10.12) 0.99ms
+2024-04-23 10:28:25,407 WebSocket connection closed: code=1001, reason=None
+2024-04-23 10:28:25,642 WebSocket connection opened
+2024-04-23 10:28:25,643 ServerConnection created
+2024-04-24 08:40:59,312 WebSocket connection closed: code=1001, reason=None
+2024-04-24 08:40:59,472 WebSocket connection opened
+2024-04-24 08:40:59,473 ServerConnection created
+2024-04-26 09:31:08,430 WebSocket connection closed: code=1001, reason=None
+2024-04-26 09:31:08,678 WebSocket connection opened
+2024-04-26 09:31:08,681 ServerConnection created
+2024-04-26 16:00:58,171 WebSocket connection closed: code=1001, reason=None
+2024-04-29 08:25:27,952 WebSocket connection opened
+2024-04-29 08:25:27,958 ServerConnection created
+2024-04-29 08:25:27,964 404 GET /favicon.ico (10.8.10.12) 2.01ms
+2024-04-29 10:20:40,888 WebSocket connection closed: code=1001, reason=None
+2024-04-29 10:20:41,116 WebSocket connection opened
+2024-04-29 10:20:41,119 ServerConnection created
+2024-04-29 13:49:44,209 WebSocket connection closed: code=1001, reason=None
+2024-04-29 13:49:44,309 WebSocket connection opened
+2024-04-29 13:49:44,310 ServerConnection created
+2024-04-30 08:16:34,828 WebSocket connection closed: code=1001, reason=None
+2024-04-30 08:16:35,057 WebSocket connection opened
+2024-04-30 08:16:35,060 ServerConnection created
+2024-04-30 08:16:40,003 WebSocket connection closed: code=1001, reason=None
+2024-04-30 08:16:58,552 WebSocket connection opened
+2024-04-30 08:16:58,555 ServerConnection created
+2024-05-01 12:42:00,142 WebSocket connection closed: code=1001, reason=None
+2024-05-01 12:42:00,387 WebSocket connection opened
+2024-05-01 12:42:00,388 ServerConnection created
+2024-05-02 09:34:41,523 WebSocket connection closed: code=1001, reason=None
+2024-05-02 09:34:41,743 WebSocket connection opened
+2024-05-02 09:34:41,744 ServerConnection created
+2024-05-03 09:19:19,135 WebSocket connection closed: code=1001, reason=None
+2024-05-03 09:19:19,366 WebSocket connection opened
+2024-05-03 09:19:19,368 ServerConnection created
+2024-05-03 16:02:32,459 WebSocket connection closed: code=1001, reason=None
+2024-05-06 08:55:14,222 WebSocket connection opened
+2024-05-06 08:55:14,227 ServerConnection created
+2024-05-06 08:55:14,235 404 GET /favicon.ico (10.8.10.12) 3.00ms
+2024-05-06 12:10:20,321 WebSocket connection closed: code=1001, reason=None
+2024-05-06 12:10:20,592 WebSocket connection opened
+2024-05-06 12:10:20,593 ServerConnection created
+2024-05-07 07:49:36,508 WebSocket connection closed: code=1001, reason=None
+2024-05-07 07:49:36,745 WebSocket connection opened
+2024-05-07 07:49:36,746 ServerConnection created
+2024-05-10 09:18:14,575 WebSocket connection closed: code=1001, reason=None
+2024-05-10 09:18:14,797 WebSocket connection opened
+2024-05-10 09:18:14,798 ServerConnection created
+2024-05-11 08:40:20,013 WebSocket connection closed: code=1001, reason=None
+2024-05-11 08:40:20,237 WebSocket connection opened
+2024-05-11 08:40:20,238 ServerConnection created
+2024-05-13 08:40:48,349 WebSocket connection closed: code=1001, reason=None
+2024-05-13 08:40:48,573 WebSocket connection opened
+2024-05-13 08:40:48,574 ServerConnection created
+2024-05-14 08:33:46,232 WebSocket connection closed: code=1001, reason=None
+2024-05-14 08:33:46,465 WebSocket connection opened
+2024-05-14 08:33:46,467 ServerConnection created
+2024-05-17 12:37:55,802 WebSocket connection closed: code=1001, reason=None
+2024-05-17 12:37:56,082 WebSocket connection opened
+2024-05-17 12:37:56,083 ServerConnection created
+2024-05-17 16:31:33,801 WebSocket connection closed: code=1001, reason=None
+2024-05-20 07:49:33,656 WebSocket connection opened
+2024-05-20 07:49:33,661 ServerConnection created
+2024-05-20 07:49:33,674 404 GET /favicon.ico (10.8.10.12) 5.06ms
+2024-05-20 09:18:21,994 WebSocket connection opened
+2024-05-20 09:18:21,996 404 GET /favicon.ico (10.8.10.5) 3.00ms
+2024-05-20 09:18:21,996 ServerConnection created
+2024-05-20 09:20:10,892 WebSocket connection closed: code=1001, reason=None
+2024-05-20 09:33:48,101 WebSocket connection closed: code=1001, reason=None
+2024-05-20 09:33:48,332 WebSocket connection opened
+2024-05-20 09:33:48,333 ServerConnection created
+2024-05-20 09:54:40,311 WebSocket connection closed: code=1001, reason=None
+2024-05-20 09:54:40,544 WebSocket connection opened
+2024-05-20 09:54:40,545 ServerConnection created
+2024-05-20 10:17:30,391 WebSocket connection closed: code=1001, reason=None
+2024-05-20 10:17:30,617 WebSocket connection opened
+2024-05-20 10:17:30,618 ServerConnection created
+2024-05-20 11:41:58,142 WebSocket connection closed: code=1001, reason=None
+2024-05-20 11:41:58,389 WebSocket connection opened
+2024-05-20 11:41:58,390 ServerConnection created
+2024-05-20 12:55:44,514 WebSocket connection closed: code=1001, reason=None
+2024-05-20 12:55:44,746 WebSocket connection opened
+2024-05-20 12:55:44,747 ServerConnection created
+2024-05-20 12:58:06,401 WebSocket connection closed: code=1001, reason=None
+2024-05-20 12:58:06,516 WebSocket connection opened
+2024-05-20 12:58:06,517 ServerConnection created
+2024-05-20 12:59:13,261 Failed sending message as connection was closed
+2024-05-20 12:59:13,262 Failed sending message as connection was closed
+2024-05-20 12:59:13,263 WebSocket connection closed: code=None, reason=None
+2024-05-20 12:59:13,344 WebSocket connection opened
+2024-05-20 12:59:13,345 ServerConnection created
+2024-05-22 09:16:26,358 WebSocket connection closed: code=1001, reason=None
+2024-05-22 09:16:26,596 WebSocket connection opened
+2024-05-22 09:16:26,597 ServerConnection created
+2024-05-22 09:32:57,335 WebSocket connection closed: code=1001, reason=None
+2024-05-22 09:32:57,578 WebSocket connection opened
+2024-05-22 09:32:57,579 ServerConnection created
+2024-05-22 09:51:09,446 WebSocket connection closed: code=1001, reason=None
+2024-05-22 09:51:09,668 WebSocket connection opened
+2024-05-22 09:51:09,669 ServerConnection created
+2024-05-22 09:52:06,479 Failed sending message as connection was closed
+2024-05-22 09:52:06,480 WebSocket connection closed: code=None, reason=None
+2024-05-22 09:52:06,592 WebSocket connection opened
+2024-05-22 09:52:06,593 ServerConnection created
+2024-05-23 11:03:26,362 WebSocket connection closed: code=1001, reason=None
+2024-05-23 11:03:26,603 WebSocket connection opened
+2024-05-23 11:03:26,604 ServerConnection created
+2024-05-23 12:02:19,220 WebSocket connection closed: code=1001, reason=None
+2024-05-23 12:02:19,457 WebSocket connection opened
+2024-05-23 12:02:19,458 ServerConnection created
+2024-05-23 14:26:32,774 WebSocket connection closed: code=1001, reason=None
+2024-05-23 14:26:33,008 WebSocket connection opened
+2024-05-23 14:26:33,009 ServerConnection created
+2024-05-23 14:56:23,975 WebSocket connection closed: code=None, reason=None
+2024-05-28 09:39:25,950 WebSocket connection opened
+2024-05-28 09:39:25,954 ServerConnection created
+2024-05-28 09:47:06,322 WebSocket connection closed: code=1001, reason=None
+2024-05-28 09:47:08,871 WebSocket connection opened
+2024-05-28 09:47:08,873 Uncaught exception GET /by_stage/ws (10.8.10.12)
+HTTPServerRequest(protocol='http', host='psc-data:5006', method='GET', uri='/by_stage/ws', version='HTTP/1.1', remote_ip='10.8.10.12')
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\websocket.py", line 942, in _accept_connection
+    open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\web.py", line 3208, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\server\views\ws.py", line 149, in open
+    raise ProtocolError("Token is expired.")
+bokeh.protocol.exceptions.ProtocolError: Token is expired.
+2024-05-28 09:47:09,218 404 GET /favicon.ico (10.8.10.12) 1.21ms
+2024-05-28 09:47:20,191 WebSocket connection opened
+2024-05-28 09:47:20,192 ServerConnection created
+2024-05-30 16:24:47,483 WebSocket connection closed: code=1001, reason=None
+2024-05-30 16:24:47,751 WebSocket connection opened
+2024-05-30 16:24:47,752 ServerConnection created
+2024-05-31 10:46:35,106 WebSocket connection closed: code=1001, reason=None
+2024-05-31 12:05:26,841 WebSocket connection opened
+2024-05-31 12:05:26,842 ServerConnection created
+2024-05-31 12:05:26,847 404 GET /favicon.ico (10.8.10.12) 3.00ms
+2024-06-03 16:45:33,128 WebSocket connection closed: code=1001, reason=None
+2024-06-03 16:45:33,353 WebSocket connection opened
+2024-06-03 16:45:33,354 ServerConnection created
+2024-06-04 08:43:10,704 WebSocket connection closed: code=1001, reason=None
+2024-06-04 08:43:10,919 WebSocket connection opened
+2024-06-04 08:43:10,920 ServerConnection created
+2024-06-05 08:24:27,691 WebSocket connection closed: code=1001, reason=None
+2024-06-05 08:24:27,928 WebSocket connection opened
+2024-06-05 08:24:27,928 ServerConnection created
+2024-06-07 12:06:58,891 WebSocket connection closed: code=1001, reason=None
+2024-06-07 12:06:59,138 WebSocket connection opened
+2024-06-07 12:06:59,139 ServerConnection created
+2024-06-07 14:02:26,558 WebSocket connection closed: code=1001, reason=None
+2024-06-07 14:02:28,995 WebSocket connection opened
+2024-06-07 14:02:28,996 Uncaught exception GET /by_stage/ws (10.8.10.12)
+HTTPServerRequest(protocol='http', host='psc-data:5006', method='GET', uri='/by_stage/ws', version='HTTP/1.1', remote_ip='10.8.10.12')
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\websocket.py", line 942, in _accept_connection
+    open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\web.py", line 3208, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\server\views\ws.py", line 149, in open
+    raise ProtocolError("Token is expired.")
+bokeh.protocol.exceptions.ProtocolError: Token is expired.
+2024-06-07 14:02:29,022 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-06-07 14:02:44,522 WebSocket connection opened
+2024-06-07 14:02:44,523 ServerConnection created
+2024-06-07 16:20:55,810 WebSocket connection closed: code=1001, reason=None
+2024-06-10 08:49:37,547 WebSocket connection opened
+2024-06-10 08:49:37,553 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-06-10 08:49:37,555 ServerConnection created
+2024-06-10 15:50:00,565 WebSocket connection closed: code=1001, reason=None
+2024-06-10 15:50:00,792 WebSocket connection opened
+2024-06-10 15:50:00,793 ServerConnection created
+2024-06-14 10:51:23,893 WebSocket connection closed: code=1001, reason=None
+2024-06-14 10:51:24,118 WebSocket connection opened
+2024-06-14 10:51:24,119 ServerConnection created
+2024-06-14 16:58:29,957 WebSocket connection closed: code=1001, reason=None
+2024-06-17 08:11:01,913 WebSocket connection opened
+2024-06-17 08:11:01,919 ServerConnection created
+2024-06-17 08:11:01,923 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-06-17 08:37:28,451 WebSocket connection closed: code=None, reason=None
+2024-06-17 08:42:30,195 WebSocket connection opened
+2024-06-17 08:42:30,196 ServerConnection created
+2024-06-17 08:42:30,199 404 GET /favicon.ico (10.8.10.12) 0.00ms
+2024-06-17 08:58:29,218 WebSocket connection closed: code=1001, reason=None
+2024-06-17 08:58:29,460 WebSocket connection opened
+2024-06-17 08:58:29,461 ServerConnection created
+2024-06-18 16:37:53,944 WebSocket connection closed: code=1001, reason=None
+2024-06-18 16:37:54,179 WebSocket connection opened
+2024-06-18 16:37:54,180 ServerConnection created
+2024-06-18 17:12:03,362 WebSocket connection closed: code=1001, reason=None
+2024-06-20 10:33:26,990 WebSocket connection opened
+2024-06-20 10:33:26,994 ServerConnection created
+2024-06-20 10:33:27,000 404 GET /favicon.ico (10.8.10.12) 1.99ms
+2024-06-21 15:45:32,764 WebSocket connection closed: code=1001, reason=None
+2024-06-21 15:45:33,000 WebSocket connection opened
+2024-06-21 15:45:33,001 ServerConnection created
+2024-06-24 15:15:08,088 WebSocket connection closed: code=1001, reason=None
+2024-06-24 15:53:44,868 WebSocket connection opened
+2024-06-24 15:53:44,876 Uncaught exception GET /by_stage/ws (10.8.10.12)
+HTTPServerRequest(protocol='http', host='psc-data:5006', method='GET', uri='/by_stage/ws', version='HTTP/1.1', remote_ip='10.8.10.12')
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\websocket.py", line 942, in _accept_connection
+    open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\web.py", line 3208, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\server\views\ws.py", line 149, in open
+    raise ProtocolError("Token is expired.")
+bokeh.protocol.exceptions.ProtocolError: Token is expired.
+2024-06-24 15:53:44,903 404 GET /favicon.ico (10.8.10.12) 0.92ms
+2024-06-24 15:53:47,964 WebSocket connection opened
+2024-06-24 15:53:47,966 ServerConnection created
+2024-06-24 15:53:52,999 WebSocket connection closed: code=1001, reason=None
+2024-07-05 08:40:15,243 WebSocket connection opened
+2024-07-05 08:40:15,248 ServerConnection created
+2024-07-05 08:40:15,250 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-07-08 08:24:28,287 WebSocket connection closed: code=1001, reason=None
+2024-07-08 08:24:28,556 WebSocket connection opened
+2024-07-08 08:24:28,558 ServerConnection created
+2024-07-08 13:47:24,190 WebSocket connection closed: code=1001, reason=None
+2024-07-08 13:47:24,943 WebSocket connection opened
+2024-07-08 13:47:24,944 ServerConnection created
+2024-07-08 15:42:49,682 WebSocket connection closed: code=1001, reason=None
+2024-07-08 15:42:49,917 WebSocket connection opened
+2024-07-08 15:42:49,921 ServerConnection created
+2024-07-09 10:23:20,148 WebSocket connection closed: code=1001, reason=None
+2024-07-09 10:23:20,373 WebSocket connection opened
+2024-07-09 10:23:20,374 ServerConnection created
+2024-07-09 11:41:19,601 WebSocket connection closed: code=1001, reason=None
+2024-07-09 11:48:30,044 WebSocket connection opened
+2024-07-09 11:48:30,045 ServerConnection created
+2024-07-09 11:48:30,048 404 GET /favicon.ico (10.8.10.12) 1.00ms
+2024-07-10 13:37:47,678 WebSocket connection closed: code=1001, reason=None
+2024-07-10 13:37:47,921 WebSocket connection opened
+2024-07-10 13:37:47,922 ServerConnection created
+2024-07-11 09:57:04,260 WebSocket connection closed: code=1001, reason=None
+2024-07-11 09:57:04,506 WebSocket connection opened
+2024-07-11 09:57:04,507 ServerConnection created
+2024-07-12 15:28:01,419 WebSocket connection closed: code=1001, reason=None
+2024-07-12 15:28:01,686 WebSocket connection opened
+2024-07-12 15:28:01,687 ServerConnection created
+2024-07-12 15:28:04,673 WebSocket connection closed: code=1001, reason=None
+2024-07-15 08:22:25,378 WebSocket connection opened
+2024-07-15 08:22:25,386 ServerConnection created
+2024-07-15 08:22:25,391 404 GET /favicon.ico (10.8.10.12) 2.96ms
+F:\Applications\Admissions\funnel\funnel.py:19: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  summ = df.groupby(["year_term", "stage"]).sum()
+2024-07-15 13:47:05,977 WebSocket connection closed: code=1001, reason=None
+2024-07-15 13:47:06,239 WebSocket connection opened
+2024-07-15 13:47:06,240 ServerConnection created
+2024-07-15 13:48:26,322 WebSocket connection closed: code=1001, reason=None
+F:\Applications\Admissions\funnel\funnel.py:19: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  summ = df.groupby(["year_term", "stage"]).sum()
+2024-07-15 13:48:38,107 WebSocket connection opened
+2024-07-15 13:48:38,109 ServerConnection created
+F:\Applications\Admissions\funnel\funnel.py:19: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  summ = df.groupby(["year_term", "stage"]).sum()
+2024-07-15 15:03:57,712 404 GET /favicon.ico (10.8.10.5) 1.00ms
+2024-07-15 15:03:57,730 WebSocket connection opened
+2024-07-15 15:03:57,732 ServerConnection created
+2024-07-15 15:04:55,776 WebSocket connection closed: code=1001, reason=None
+2024-07-15 15:14:51,302 WebSocket connection closed: code=1001, reason=None
+2024-07-15 15:14:52,411 WebSocket connection opened
+2024-07-15 15:14:52,439 Uncaught exception GET /funnel/ws (10.8.10.12)
+HTTPServerRequest(protocol='http', host='psc-data:5006', method='GET', uri='/funnel/ws', version='HTTP/1.1', remote_ip='10.8.10.12')
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\websocket.py", line 942, in _accept_connection
+    open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\web.py", line 3208, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\server\views\ws.py", line 149, in open
+    raise ProtocolError("Token is expired.")
+bokeh.protocol.exceptions.ProtocolError: Token is expired.
+2024-07-15 15:14:53,272 WebSocket connection opened
+2024-07-15 15:14:53,274 Uncaught exception GET /by_stage/ws (10.8.10.12)
+HTTPServerRequest(protocol='http', host='psc-data:5006', method='GET', uri='/by_stage/ws', version='HTTP/1.1', remote_ip='10.8.10.12')
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\websocket.py", line 942, in _accept_connection
+    open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\tornado\web.py", line 3208, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\Anaconda3\envs\py311streamlit\Lib\site-packages\bokeh\server\views\ws.py", line 149, in open
+    raise ProtocolError("Token is expired.")
+bokeh.protocol.exceptions.ProtocolError: Token is expired.
+2024-07-15 15:14:58,116 WebSocket connection opened
+2024-07-15 15:14:58,117 ServerConnection created
+2024-07-16 14:49:26,615 WebSocket connection closed: code=1001, reason=None
+2024-07-16 14:49:26,848 WebSocket connection opened
+2024-07-16 14:49:26,849 ServerConnection created
+2024-07-19 08:19:33,191 WebSocket connection closed: code=1001, reason=None
+2024-07-19 08:19:33,421 WebSocket connection opened
+2024-07-19 08:19:33,422 ServerConnection created
+2024-07-19 12:06:24,204 WebSocket connection closed: code=1001, reason=None
+2024-07-19 12:06:24,439 WebSocket connection opened
+2024-07-19 12:06:24,441 ServerConnection created
+2024-07-19 12:07:17,068 WebSocket connection closed: code=1001, reason=None
+2024-07-29 08:04:11,325 WebSocket connection opened
+2024-07-29 08:04:11,327 ServerConnection created
+2024-07-29 08:04:11,335 404 GET /favicon.ico (10.8.11.1) 1.00ms
+2024-07-30 10:35:09,495 WebSocket connection closed: code=None, reason=None
+2024-08-06 10:25:23,096 WebSocket connection opened
+2024-08-06 10:25:23,101 ServerConnection created
+2024-08-06 10:25:23,105 404 GET /favicon.ico (10.8.11.1) 1.00ms
+2024-08-07 10:37:40,282 WebSocket connection closed: code=1001, reason=None
+2024-08-07 10:37:40,567 WebSocket connection opened
+2024-08-07 10:37:40,569 ServerConnection created
+2024-08-09 12:23:25,608 WebSocket connection closed: code=1001, reason=None
+2024-08-09 12:23:25,860 WebSocket connection opened
+2024-08-09 12:23:25,861 ServerConnection created
+2024-08-09 16:54:06,460 WebSocket connection closed: code=1001, reason=None
+2024-08-20 13:12:48,550 WebSocket connection opened
+2024-08-20 13:12:48,564 ServerConnection created
+2024-08-20 13:12:48,570 404 GET /favicon.ico (10.8.11.6) 2.03ms
+2024-08-21 10:52:19,283 WebSocket connection closed: code=1001, reason=None
+2024-08-21 10:52:19,511 WebSocket connection opened
+2024-08-21 10:52:19,512 ServerConnection created
+2024-08-22 10:02:10,468 WebSocket connection closed: code=1001, reason=None
+2024-08-22 10:02:10,701 WebSocket connection opened
+2024-08-22 10:02:10,702 ServerConnection created
+2024-08-23 14:59:08,098 WebSocket connection closed: code=1001, reason=None
+2024-08-23 14:59:08,320 WebSocket connection opened
+2024-08-23 14:59:08,322 ServerConnection created
+2024-08-23 14:59:12,714 WebSocket connection closed: code=1001, reason=None
+2024-08-26 08:07:01,488 WebSocket connection opened
+2024-08-26 08:07:01,496 ServerConnection created
+2024-08-26 08:07:01,499 404 GET /favicon.ico (10.8.11.6) 0.99ms
+2024-08-27 10:57:16,068 WebSocket connection closed: code=1001, reason=None
+2024-08-27 10:57:16,337 WebSocket connection opened
+2024-08-27 10:57:16,338 ServerConnection created
+2024-08-27 10:57:18,641 WebSocket connection closed: code=1001, reason=None
+2024-08-27 10:57:21,138 WebSocket connection opened
+2024-08-27 10:57:21,139 ServerConnection created
+2024-08-28 08:33:40,393 WebSocket connection closed: code=1001, reason=None
+2024-08-28 08:33:40,492 WebSocket connection opened
+2024-08-28 08:33:40,494 ServerConnection created
+2024-08-29 10:36:39,932 WebSocket connection closed: code=1001, reason=None
+2024-08-29 10:36:40,126 WebSocket connection opened
+2024-08-29 10:36:40,127 ServerConnection created
+2024-08-30 15:49:37,601 WebSocket connection closed: code=1001, reason=None
+2024-09-02 08:38:52,974 WebSocket connection opened
+2024-09-02 08:38:52,983 ServerConnection created
+2024-09-02 08:38:53,002 404 GET /favicon.ico (10.8.11.6) 3.00ms
+2024-09-03 09:40:20,273 WebSocket connection closed: code=1001, reason=None
+2024-09-03 09:40:20,439 WebSocket connection opened
+2024-09-03 09:40:20,440 ServerConnection created
+2024-09-03 09:40:30,025 WebSocket connection closed: code=1001, reason=None
+2024-09-03 09:40:30,090 WebSocket connection opened
+2024-09-03 09:40:30,091 ServerConnection created
+2024-09-04 13:40:05,434 WebSocket connection closed: code=1001, reason=None
+2024-09-04 13:40:05,522 WebSocket connection opened
+2024-09-04 13:40:05,525 ServerConnection created
+2024-09-05 10:03:26,043 WebSocket connection closed: code=1001, reason=None
+2024-09-05 10:03:26,123 WebSocket connection opened
+2024-09-05 10:03:26,124 ServerConnection created
+2024-09-05 12:37:45,750 WebSocket connection closed: code=1001, reason=None
+2024-09-05 12:37:45,834 WebSocket connection opened
+2024-09-05 12:37:45,837 ServerConnection created
+2024-09-05 12:38:03,047 WebSocket connection closed: code=1001, reason=None
+2024-09-05 12:38:03,114 WebSocket connection opened
+2024-09-05 12:38:03,115 ServerConnection created
+"***** batch file running" 
+Thu 09/05/2024 
+12:38 PM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-09-05 12:38:54,366 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-09-05 12:38:54,452 User authentication hooks NOT provided (default user enabled)
+2024-09-05 12:38:54,552 Bokeh app running at: http://localhost:5006/by_program
+2024-09-05 12:38:54,552 Bokeh app running at: http://localhost:5006/by_stage
+2024-09-05 12:38:54,553 Bokeh app running at: http://localhost:5006/funnel
+2024-09-05 12:38:54,553 Bokeh app running at: http://localhost:5006/table_by_program
+2024-09-05 12:38:54,553 Starting Bokeh server with process id: 6160
+2024-09-05 12:38:57,102 WebSocket connection opened
+2024-09-05 12:38:57,103 ServerConnection created
+2024-09-06 10:43:35,023 WebSocket connection closed: code=1001, reason=None
+2024-09-06 10:43:35,114 WebSocket connection opened
+2024-09-06 10:43:35,116 ServerConnection created
+2024-09-06 14:30:39,849 WebSocket connection closed: code=1001, reason=None
+2024-09-09 08:18:58,937 WebSocket connection opened
+2024-09-09 08:18:58,942 ServerConnection created
+2024-09-09 08:18:58,960 404 GET /favicon.ico (10.8.11.6) 2.02ms
+2024-09-10 09:24:43,875 WebSocket connection closed: code=1001, reason=None
+2024-09-10 09:24:44,024 WebSocket connection opened
+2024-09-10 09:24:44,028 ServerConnection created
+2024-09-11 14:11:07,021 WebSocket connection closed: code=1001, reason=None
+2024-09-11 14:11:07,107 WebSocket connection opened
+2024-09-11 14:11:07,108 ServerConnection created
+2024-09-12 09:08:59,874 WebSocket connection closed: code=1001, reason=None
+2024-09-12 09:08:59,967 WebSocket connection opened
+2024-09-12 09:08:59,969 ServerConnection created
+2024-09-13 15:10:21,685 WebSocket connection closed: code=1001, reason=None
+2024-09-16 08:27:18,779 WebSocket connection opened
+2024-09-16 08:27:18,786 ServerConnection created
+2024-09-16 08:27:18,792 404 GET /favicon.ico (10.8.11.6) 2.00ms
+2024-09-16 16:58:34,570 WebSocket connection closed: code=1001, reason=None
+2024-09-16 16:58:34,720 WebSocket connection opened
+2024-09-16 16:58:34,721 ServerConnection created
+2024-09-17 08:09:16,667 WebSocket connection closed: code=1001, reason=None
+2024-09-17 08:09:16,748 WebSocket connection opened
+2024-09-17 08:09:16,751 ServerConnection created
+2024-09-18 08:34:45,120 WebSocket connection closed: code=1001, reason=None
+2024-09-18 08:34:45,204 WebSocket connection opened
+2024-09-18 08:34:45,205 ServerConnection created
+2024-09-20 10:38:53,020 WebSocket connection closed: code=1001, reason=None
+2024-09-20 10:38:53,112 WebSocket connection opened
+2024-09-20 10:38:53,113 ServerConnection created
+2024-09-20 16:39:32,713 WebSocket connection closed: code=1001, reason=None
+2024-09-23 08:00:12,935 WebSocket connection opened
+2024-09-23 08:00:12,939 ServerConnection created
+2024-09-23 08:00:12,956 404 GET /favicon.ico (10.8.11.6) 0.96ms
+2024-09-24 12:17:52,406 WebSocket connection closed: code=1001, reason=None
+2024-09-24 12:17:52,623 WebSocket connection opened
+2024-09-24 12:17:52,627 ServerConnection created
+2024-09-25 10:40:17,573 WebSocket connection closed: code=1001, reason=None
+2024-09-25 10:40:17,705 WebSocket connection opened
+2024-09-25 10:40:17,706 ServerConnection created
+2024-09-27 11:47:02,413 WebSocket connection closed: code=1001, reason=None
+2024-09-30 08:49:00,722 WebSocket connection opened
+2024-09-30 08:49:00,725 ServerConnection created
+2024-09-30 08:49:00,884 404 GET /favicon.ico (10.8.11.6) 3.05ms
+2024-10-01 09:29:11,251 WebSocket connection closed: code=1001, reason=None
+2024-10-01 09:29:11,878 WebSocket connection opened
+2024-10-01 09:29:11,882 ServerConnection created
+2024-10-02 11:19:16,594 WebSocket connection closed: code=None, reason=None
+2024-10-07 08:26:56,110 WebSocket connection opened
+2024-10-07 08:26:56,115 ServerConnection created
+2024-10-07 08:26:56,178 404 GET /favicon.ico (10.8.11.6) 2.00ms
+2024-10-08 09:32:28,546 WebSocket connection closed: code=1001, reason=None
+2024-10-08 09:32:29,159 WebSocket connection opened
+2024-10-08 09:32:29,162 ServerConnection created
+2024-10-09 11:37:29,735 WebSocket connection closed: code=1001, reason=None
+2024-10-09 11:37:29,870 WebSocket connection opened
+2024-10-09 11:37:29,873 ServerConnection created
+2024-10-09 16:59:12,069 WebSocket connection closed: code=1001, reason=None
+2024-10-15 08:46:15,326 404 GET /favicon.ico (10.10.24.27) 5.04ms
+2024-10-15 08:46:15,402 WebSocket connection opened
+2024-10-15 08:46:15,428 ServerConnection created
+2024-10-15 09:12:58,585 WebSocket connection closed: code=None, reason=None
+2024-10-15 10:18:22,238 WebSocket connection opened
+2024-10-15 10:18:22,248 ServerConnection created
+2024-10-15 10:18:22,507 404 GET /favicon.ico (10.8.11.6) 8.00ms
+2024-10-15 15:32:33,434 WebSocket connection closed: code=1001, reason=None
+2024-10-15 15:33:03,388 WebSocket connection opened
+2024-10-15 15:33:03,389 ServerConnection created
+2024-10-25 17:43:22,584 WebSocket connection closed: code=1001, reason=None
+2024-10-28 08:48:22,605 WebSocket connection opened
+2024-10-28 08:48:22,610 ServerConnection created
+2024-10-28 08:48:22,616 404 GET /favicon.ico (10.8.11.6) 3.91ms
+2024-10-31 09:52:38,492 WebSocket connection closed: code=None, reason=None
+2024-10-31 17:03:32,797 WebSocket connection opened
+2024-10-31 17:03:32,799 ServerConnection created
+2024-10-31 17:05:28,091 WebSocket connection closed: code=1001, reason=None
+2024-11-04 08:08:50,697 WebSocket connection opened
+2024-11-04 08:08:50,701 ServerConnection created
+2024-11-04 08:08:50,848 404 GET /favicon.ico (10.8.11.6) 1.00ms
+2024-11-04 08:27:25,945 WebSocket connection closed: code=1001, reason=None
+2024-11-04 08:27:44,405 WebSocket connection opened
+2024-11-04 08:27:44,407 ServerConnection created
+2024-11-04 08:27:44,448 404 GET /favicon.ico (10.8.11.6) 1.04ms
+2024-11-05 09:25:04,162 WebSocket connection closed: code=1001, reason=None
+2024-11-05 09:25:04,309 WebSocket connection opened
+2024-11-05 09:25:04,312 ServerConnection created
+2024-11-07 16:45:00,668 WebSocket connection closed: code=1001, reason=None
+2024-11-07 16:45:00,811 WebSocket connection opened
+2024-11-07 16:45:00,815 ServerConnection created
+2024-11-08 16:15:36,509 WebSocket connection closed: code=1001, reason=None
+2024-11-08 16:15:36,729 WebSocket connection opened
+2024-11-08 16:15:36,730 ServerConnection created
+2024-11-08 16:15:40,535 WebSocket connection closed: code=1001, reason=None
+2024-11-11 08:36:44,090 WebSocket connection opened
+2024-11-11 08:36:44,100 ServerConnection created
+2024-11-11 08:36:44,139 404 GET /favicon.ico (10.8.11.6) 2.00ms
+2024-11-12 09:10:06,255 WebSocket connection closed: code=1001, reason=None
+2024-11-12 09:10:06,485 WebSocket connection opened
+2024-11-12 09:10:06,487 ServerConnection created
+2024-11-13 08:21:11,971 WebSocket connection closed: code=None, reason=None
+2024-11-14 16:33:54,703 WebSocket connection opened
+2024-11-14 16:33:54,719 ServerConnection created
+2024-11-14 16:34:01,891 WebSocket connection closed: code=1001, reason=None
+2024-11-18 07:53:29,538 WebSocket connection opened
+2024-11-18 07:53:29,544 ServerConnection created
+2024-11-18 07:53:29,585 404 GET /favicon.ico (10.8.11.6) 2.95ms
+2024-11-19 08:32:23,382 WebSocket connection closed: code=1001, reason=None
+2024-11-19 08:32:23,596 WebSocket connection opened
+2024-11-19 08:32:23,599 ServerConnection created
+2024-11-20 08:16:47,563 WebSocket connection closed: code=1001, reason=None
+2024-11-20 08:16:47,743 WebSocket connection opened
+2024-11-20 08:16:47,744 ServerConnection created
+2024-11-21 14:54:11,981 WebSocket connection closed: code=1001, reason=None
+2024-11-21 14:54:12,148 WebSocket connection opened
+2024-11-21 14:54:12,149 ServerConnection created
+2024-11-22 08:51:54,175 WebSocket connection closed: code=1001, reason=None
+2024-11-22 08:51:54,388 WebSocket connection opened
+2024-11-22 08:51:54,389 ServerConnection created
+2024-11-22 16:11:05,961 WebSocket connection closed: code=1001, reason=None
+2024-11-25 08:33:02,448 WebSocket connection opened
+2024-11-25 08:33:02,452 ServerConnection created
+2024-11-25 08:33:02,459 404 GET /favicon.ico (10.8.11.6) 2.00ms
+2024-11-26 08:55:05,318 WebSocket connection closed: code=1001, reason=None
+2024-11-26 08:55:05,537 WebSocket connection opened
+2024-11-26 08:55:05,540 ServerConnection created
+2024-11-26 14:30:49,253 WebSocket connection closed: code=1001, reason=None
+2024-12-02 08:27:31,590 WebSocket connection opened
+2024-12-02 08:27:31,598 ServerConnection created
+2024-12-02 08:27:31,723 404 GET /favicon.ico (10.8.11.6) 2.00ms
+2024-12-03 08:37:40,417 WebSocket connection closed: code=1001, reason=None
+2024-12-03 08:37:40,625 WebSocket connection opened
+2024-12-03 08:37:40,628 ServerConnection created
+2024-12-04 15:51:42,185 WebSocket connection closed: code=1001, reason=None
+2024-12-04 15:51:42,412 WebSocket connection opened
+2024-12-04 15:51:42,414 ServerConnection created
+2024-12-05 10:06:09,737 WebSocket connection closed: code=1001, reason=None
+2024-12-05 10:06:09,836 WebSocket connection opened
+2024-12-05 10:06:09,840 ServerConnection created
+2024-12-05 16:05:28,466 WebSocket connection closed: code=1001, reason=None
+2024-12-09 07:41:06,539 WebSocket connection opened
+2024-12-09 07:41:06,542 ServerConnection created
+2024-12-09 07:41:06,546 404 GET /favicon.ico (10.8.11.6) 1.03ms
+2024-12-10 09:18:44,852 WebSocket connection closed: code=1001, reason=None
+2024-12-10 09:18:45,054 WebSocket connection opened
+2024-12-10 09:18:45,055 ServerConnection created
+2024-12-10 12:41:41,993 404 GET /favicon.ico (10.8.10.5) 3.99ms
+2024-12-10 12:41:41,998 WebSocket connection opened
+2024-12-10 12:41:41,999 ServerConnection created
+2024-12-10 13:11:57,578 WebSocket connection closed: code=1001, reason=None
+2024-12-10 15:45:42,232 404 GET /favicon.ico (10.8.10.5) 3.00ms
+2024-12-10 15:45:42,247 WebSocket connection opened
+2024-12-10 15:45:42,248 ServerConnection created
+2024-12-10 15:49:58,114 WebSocket connection closed: code=1001, reason=None
+2024-12-11 09:36:00,388 WebSocket connection closed: code=1001, reason=None
+2024-12-11 09:36:00,597 WebSocket connection opened
+2024-12-11 09:36:00,599 ServerConnection created
+2024-12-12 07:39:11,939 WebSocket connection opened
+2024-12-12 07:39:11,954 ServerConnection created
+2024-12-12 07:39:11,955 404 GET /favicon.ico (10.8.10.5) 3.02ms
+2024-12-12 08:59:55,241 WebSocket connection closed: code=1001, reason=None
+2024-12-13 15:19:58,950 WebSocket connection closed: code=1001, reason=None
+2024-12-13 15:19:59,163 WebSocket connection opened
+2024-12-13 15:19:59,164 ServerConnection created
+2024-12-13 16:22:36,510 WebSocket connection closed: code=1001, reason=None
+2024-12-16 08:33:56,997 WebSocket connection opened
+2024-12-16 08:33:57,005 ServerConnection created
+2024-12-16 08:33:57,041 404 GET /favicon.ico (10.8.11.6) 2.00ms
+2024-12-17 13:43:30,174 WebSocket connection closed: code=1001, reason=None
+2024-12-17 13:43:30,395 WebSocket connection opened
+2024-12-17 13:43:30,399 ServerConnection created
+2024-12-17 16:44:45,847 404 GET /favicon.ico (10.8.10.5) 3.00ms
+2024-12-17 16:44:45,853 WebSocket connection opened
+2024-12-17 16:44:45,854 ServerConnection created
+2024-12-17 16:50:12,699 WebSocket connection closed: code=1001, reason=None
+2024-12-18 08:53:42,015 WebSocket connection closed: code=1001, reason=None
+2024-12-18 08:53:42,225 WebSocket connection opened
+2024-12-18 08:53:42,227 ServerConnection created
+"***** batch file running" 
+Thu 12/19/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-19 03:10:15,947 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-19 03:10:15,953 User authentication hooks NOT provided (default user enabled)
+2024-12-19 03:10:15,973 Bokeh app running at: http://localhost:5006/by_program
+2024-12-19 03:10:15,973 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-19 03:10:15,973 Bokeh app running at: http://localhost:5006/funnel
+2024-12-19 03:10:15,973 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-19 03:10:15,973 Starting Bokeh server with process id: 8024
+2024-12-19 11:01:39,979 WebSocket connection opened
+2024-12-19 11:01:39,981 ServerConnection created
+2024-12-19 15:10:00,930 WebSocket connection closed: code=1001, reason=None
+2024-12-19 15:10:01,154 WebSocket connection opened
+2024-12-19 15:10:01,155 ServerConnection created
+2024-12-19 15:57:14,989 WebSocket connection opened
+2024-12-19 15:57:14,991 ServerConnection created
+2024-12-19 15:57:14,993 404 GET /favicon.ico (10.8.10.5) 1.99ms
+2024-12-19 16:39:16,331 WebSocket connection closed: code=1001, reason=None
+^C"***** batch file running" 
+Fri 12/20/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-20 03:10:05,268 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-20 03:10:05,271 User authentication hooks NOT provided (default user enabled)
+2024-12-20 03:10:05,280 Bokeh app running at: http://localhost:5006/by_program
+2024-12-20 03:10:05,280 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-20 03:10:05,280 Bokeh app running at: http://localhost:5006/funnel
+2024-12-20 03:10:05,280 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-20 03:10:05,280 Starting Bokeh server with process id: 10076
+2024-12-20 13:32:57,923 WebSocket connection opened
+2024-12-20 13:32:57,925 ServerConnection created
+2024-12-20 16:17:46,789 WebSocket connection closed: code=1001, reason=None
+^C"***** batch file running" 
+Sat 12/21/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-21 03:10:09,087 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-21 03:10:09,095 User authentication hooks NOT provided (default user enabled)
+2024-12-21 03:10:09,123 Bokeh app running at: http://localhost:5006/by_program
+2024-12-21 03:10:09,123 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-21 03:10:09,123 Bokeh app running at: http://localhost:5006/funnel
+2024-12-21 03:10:09,123 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-21 03:10:09,123 Starting Bokeh server with process id: 12612
+^C"***** batch file running" 
+Sun 12/22/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-22 03:10:09,379 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-22 03:10:09,383 User authentication hooks NOT provided (default user enabled)
+2024-12-22 03:10:09,394 Bokeh app running at: http://localhost:5006/by_program
+2024-12-22 03:10:09,394 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-22 03:10:09,394 Bokeh app running at: http://localhost:5006/funnel
+2024-12-22 03:10:09,394 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-22 03:10:09,395 Starting Bokeh server with process id: 14212
+^C"***** batch file running" 
+Mon 12/23/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-23 03:10:09,119 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-23 03:10:09,123 User authentication hooks NOT provided (default user enabled)
+2024-12-23 03:10:09,139 Bokeh app running at: http://localhost:5006/by_program
+2024-12-23 03:10:09,139 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-23 03:10:09,139 Bokeh app running at: http://localhost:5006/funnel
+2024-12-23 03:10:09,139 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-23 03:10:09,139 Starting Bokeh server with process id: 13764
+^C"***** batch file running" 
+Tue 12/24/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-24 03:10:05,197 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-24 03:10:05,200 User authentication hooks NOT provided (default user enabled)
+2024-12-24 03:10:05,208 Bokeh app running at: http://localhost:5006/by_program
+2024-12-24 03:10:05,209 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-24 03:10:05,209 Bokeh app running at: http://localhost:5006/funnel
+2024-12-24 03:10:05,209 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-24 03:10:05,209 Starting Bokeh server with process id: 20456
+^C"***** batch file running" 
+Wed 12/25/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-25 03:10:09,441 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-25 03:10:09,445 User authentication hooks NOT provided (default user enabled)
+2024-12-25 03:10:09,460 Bokeh app running at: http://localhost:5006/by_program
+2024-12-25 03:10:09,460 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-25 03:10:09,460 Bokeh app running at: http://localhost:5006/funnel
+2024-12-25 03:10:09,460 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-25 03:10:09,460 Starting Bokeh server with process id: 21868
+"***** batch file running" 
+Thu 12/26/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-26 03:10:09,347 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-26 03:10:09,352 User authentication hooks NOT provided (default user enabled)
+2024-12-26 03:10:09,367 Bokeh app running at: http://localhost:5006/by_program
+2024-12-26 03:10:09,368 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-26 03:10:09,368 Bokeh app running at: http://localhost:5006/funnel
+2024-12-26 03:10:09,368 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-26 03:10:09,368 Starting Bokeh server with process id: 21588
+"***** batch file running" 
+Sat 12/28/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-28 03:10:10,946 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-28 03:10:10,950 User authentication hooks NOT provided (default user enabled)
+2024-12-28 03:10:10,965 Bokeh app running at: http://localhost:5006/by_program
+2024-12-28 03:10:10,965 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-28 03:10:10,965 Bokeh app running at: http://localhost:5006/funnel
+2024-12-28 03:10:10,966 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-28 03:10:10,966 Starting Bokeh server with process id: 28844
+"***** batch file running" 
+Mon 12/30/2024 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2024-12-30 03:10:10,677 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2024-12-30 03:10:10,681 User authentication hooks NOT provided (default user enabled)
+2024-12-30 03:10:10,692 Bokeh app running at: http://localhost:5006/by_program
+2024-12-30 03:10:10,692 Bokeh app running at: http://localhost:5006/by_stage
+2024-12-30 03:10:10,692 Bokeh app running at: http://localhost:5006/funnel
+2024-12-30 03:10:10,692 Bokeh app running at: http://localhost:5006/table_by_program
+2024-12-30 03:10:10,692 Starting Bokeh server with process id: 28712
+"***** batch file running" 
+Wed 01/01/2025 
+03:10 AM
+paulsmiths\tsra
+"whoami" 
+"F:" 
+"cd" 
+
+F:\Applications\Admissions\funnel>conda.bat activate py311streamlit 
+"call activate" 
+"START bokeh server " 
+2025-01-01 03:10:10,892 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2025-01-01 03:10:10,897 User authentication hooks NOT provided (default user enabled)
+2025-01-01 03:10:10,915 Bokeh app running at: http://localhost:5006/by_program
+2025-01-01 03:10:10,916 Bokeh app running at: http://localhost:5006/by_stage
+2025-01-01 03:10:10,916 Bokeh app running at: http://localhost:5006/funnel
+2025-01-01 03:10:10,916 Bokeh app running at: http://localhost:5006/table_by_program
+2025-01-01 03:10:10,916 Starting Bokeh server with process id: 39724
