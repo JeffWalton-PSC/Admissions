@@ -135,6 +135,7 @@ dmypy.json
 logs/
 static/
 data/
+
 # ignore input/output files
 *.txt
 *.csv
@@ -143,6 +144,8 @@ data/
 *.xlsx
 
 *.ipynb
+
+*.log
 
 # ignore .ipynb_checkpoints directory
 .ipynb_checkpoints/
