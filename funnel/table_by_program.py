@@ -8,10 +8,10 @@ from bokeh.models import ColumnDataSource
 from bokeh.models.widgets import DataTable, TableColumn, RadioGroup
 
 
-start_term = "2017.Spring"
-this_yearterm = "2026.Fall"
-last_yearterm = "2025.Fall"
-twoyrago_yearterm = "2024.Fall"
+start_term = "2018.Spring"
+this_yearterm = "2027.Fall"
+last_yearterm = "2026.Fall"
+twoyrago_yearterm = "2025.Fall"
 
 
 def date_diff_weeks(start, end):

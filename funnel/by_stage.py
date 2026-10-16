@@ -10,7 +10,7 @@ from bokeh.palettes import Set1_9, Bokeh8, Colorblind8
 # PowerCampus utilities
 import powercampus as pc
 
-start_term = "2018.Spring"
+start_term = "2019.Spring"
 
 current_yt_df = pc.current_yearterm()
 current_term = current_yt_df['term'].iloc[0]

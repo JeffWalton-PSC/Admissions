@@ -6,7 +6,7 @@ from bokeh.models import HoverTool
 from bokeh.models.widgets import Select
 from bokeh.plotting import figure, curdoc, ColumnDataSource
 
-start_term = "2017.Spring"
+start_term = "2019.Spring"
 
 TOOLS = "pan,wheel_zoom,box_zoom,save,reset"
 

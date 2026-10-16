@@ -13,7 +13,7 @@ connection = local_db.connection()
 
 today = datetime.now().strftime("%Y%m%d")
 
-begin_year = "2016"
+begin_year = "2017"
 
 # read VWSSTAGERANKING data
 sql_str = (
